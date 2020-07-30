@@ -1,0 +1,137 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-navbar></app-navbar>
+
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Prof Management</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+
+                <!--begin modal-->
+
+
+                <div class="table_users col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">ADD PROF
+                            </h6>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <form [formGroup]="addUeser" (ngSubmit)="addProf()" class="mx-3">
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="firstname" type="text" id="orangeForm-name"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right"
+                                            for="orangeForm-name">firstname</label>
+                                        <div class="text-danger" *ngIf="myfirstname.touched && myfirstname.invalid">
+                                            <div *ngIf="myfirstname.errors.required">firstname is required</div>
+                                            <div *ngIf="myfirstname.errors.pattern">firstname in invalid</div>
+                                            <div *ngIf="myfirstname.errors.minlength">firstname must contains 2
+                                                characteres at least</div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input formControlName="lastname" type="text" id="orangeForm-name"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right"
+                                            for="orangeForm-name">lastname</label>
+                                        <div class="text-danger" *ngIf="mylastname.touched && mylastname.invalid">
+                                            <div *ngIf="mylastname.errors.required">lastname is required</div>
+                                            <div *ngIf="mylastname.errors.pattern">lastname is invalid</div>
+                                            <div *ngIf="mylastname.errors.minlength">last name must contains at least 2
+                                                characteres</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
+                                        <input formControlName="email" type="email" id="orangeForm-email"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right"
+                                            for="orangeForm-email">email</label>
+                                        <div class="text-danger" *ngIf=" myemail.touched &&  myemail.invalid">
+                                            <div *ngIf="myemail.errors.required">email is required</div>
+                                            <div *ngIf="myemail.errors.email">email is invalid</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="md-form mb-4">
+                                        <i class="fas fa-lock prefix grey-text"></i>
+                                        <input formControlName="password" type="password" id="orangeForm-pass"
+                                            class="form-control">
+                                        <label data-error="wrong" data-success="right"
+                                            for="orangeForm-pass">password</label>
+                                        <div class="text-danger" *ngIf=" mypassword.touched &&  mypassword.invalid">
+                                            <div *ngIf="mypassword.errors.required">password is required</div>
+
+                                            <div *ngIf="mypassword.errors.minlength">password must contains 8
+                                                characteres at least</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div>
+                                            <input type="submit" value="add prof" [disabled]="addUeser.invalid "
+                                                class="btn btn-primary mr-2 mb-2">
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--end modal-->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

@@ -1,0 +1,127 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+
+            <app-navbar></app-navbar>
+
+
+
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">User Management</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+                <div class="row">
+                    <!-- Area Chart -->
+                    <div class="table_users col-xl-12 col-lg-12">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Users List</h6>
+                                <button routerLink="/add-user" class="btn btn-info">add User</button>
+                            </div>
+                            <div *ngIf="users.length==0" class="alert alert-warning">users table is empty</div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area row">
+                                    <table *ngIf="users.length!=0" class="table col-xl-8 col-lg-8">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>firstname</th>
+                                                <th>lastname</th>
+                                                <th>email</th>
+
+                                                <th>#</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let user of users;let i = index">
+
+                                                <td> {{i+1}} </td>
+                                                <td>{{user.firstname}}</td>
+                                                <td>{{user.lastname}}</td>
+                                                <td>{{user.email}}</td>
+
+
+                                                <td>
+                                                    <button (click)="deletUser(user,i)" class="btn btn-sm btn-danger"><i
+                                                            class="far fa-trash-alt"></i></button>
+                                                    <button [routerLink]="['/user-update',user._id]"
+                                                        class="btn btn-warning btn-sm ml-3"><i
+                                                            class="far fa-edit"></i></button>
+                                                    <!--
+                                                     
+                                                        
+                                                                      <button (click)="updateUser(user)" class="btn btn-sm" [ngClass]="{
+                                                        'btn-success':!user.etat,
+                                                        'btn-danger':user.etat
+                                                    }">
+
+                                                        <i class="fas" [ngClass]="{
+                                                            'fa-user-check':!user.etat,
+                                                            'fa-user-lock':user.etat
+                                                        }"></i>
+
+                                                    </button>
+                                                 
+                                              
+
+                                                    
+                                                      -->
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="col-xl-4 col-lg-4">
+                                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_j9e7ic.json"
+                                            background="transparent" speed="1" loop autoplay></lottie-player>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

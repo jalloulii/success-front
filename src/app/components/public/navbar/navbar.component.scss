@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lato;
+}
+html{
+   font-size: 11px !important;
+}
+body{
+    overflow-x: hidden;
+}
+a{
+
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container{
+    width: 100%;
+    max-width: 117rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.menu-icons{
+    color: #eee;
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1500;
+    display: none;
+}
+nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    
+}
+.logo{
+    
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav-list{
+    position: absolute;
+    display: flex;
+  width: 100%;
+  left: 300px !important;
+}
+.nav-list li{
+    line-height: 7rem;
+    position: relative;
+}
+.sub-menu li{
+    line-height: 4rem;
+}
+.nav-list a{ 
+ text-decoration: none;
+    display: block;
+    color: black;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: color 650ms;
+}
+.nav-list a:hover{
+    color: #C19A3A;
+    transition: ease-in(.15s);
+}
+
+.sub-menu{
+    width: max-content !important;
+    display: block;
+    position: absolute;
+    border-top: 3px solid #C19A3A;
+    background-color: rgb(255, 255, 255);
+    box-shadow: lightgrey 3px 3px 3px;
+    
+    z-index: 100;
+    top: 16rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 650ms ease;
+}
+.sub-menu::before{
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    left: 3rem;
+    border: 1.2rem solid transparent;
+    border-bottom-color: #C19A3A;
+}
+.sub-menu  .sub-menu::before{
+top: .9rem;
+left: -2.5rem;
+border: 1.2rem solid transparent;
+border-right-color: #C19A3A;
+}
+
+
+.sub-menu .sub-menu{
+    border-top: none;
+    border-left: 3px solid #C19A3A;
+    top: 0;
+    width: 24rem;
+    left: 160%;
+}
+
+
+.nav-list li:hover > .sub-menu{
+    top: 8rem;
+    opacity: 1;
+    visibility: visible;
+}
+.sub-menu li:hover > .sub-menu{
+    left: 100%;
+     top: 0;
+ }
+ li.move-right{
+     margin: auto 0 auto auto;
+     line-height: initial;
+ }
+
+
+ .profile{
+    background-color: #C19A3A;
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    position: relative;
+}
+.userInitial{
+    color: rgba(255, 255, 255, 0.938);
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.pro{
+    width: 415px !important;
+    left: -245px;
+    height: max-content;
+}
+
+.pro::before{
+    content: "" !important;
+    position: absolute !important;
+    top: -2.5rem !important;
+    left: 270px !important;
+    border: 1.2rem solid transparent !important;
+    border-bottom-color: #C19A3A !important;
+}
+.nameAndEmail{
+    height: 100px;
+    
+    margin-bottom: 20px;
+}
+.nameAndEmail:hover{
+    background-color: rgba(211, 211, 211, 0.692);
+}
+.profileLinks{
+ 
+    height: 450px ;
+    width: 100%;
+}
+.linksOfProfile{
+    margin-bottom: 10px;
+    height: 100px;
+  
+}
+.myProfilelinks{
+    font-size: 22px;
+    color:#C19A3A ;
+    font-family: comic sans ms;
+    text-transform: lowercase;
+}
+.aprofile:hover{
+background-color: rgba(211, 211, 211, 0.692);
+}
+
+ @media screen and (max-width:991px){
+     .nav-list{
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 100vh;
+         display: none;
+         flex-direction: column;
+         align-items: initial;
+         background-color: #191919;
+         z-index: 1000;
+     }
+     .nav-list >li{
+         line-height: 6rem;
+     }
+     .sub-menu{
+         position: initial;
+         border: 3px solid transparent;
+         border-left-color: #eb3007;
+         margin-left: 1rem;
+         max-height: 0;
+     }
+     .sub-menu::before{
+         display: none;
+     }
+     .nav-list li:hover >.sub-menu{
+         opacity: 1;
+         visibility: visible;
+         max-height: initial;
+
+     }
+     li.move-right{
+         margin: 0 auto 0 0;
+         line-height: initial;
+     }
+     .menu-icons{
+         display: block;
+     }
+     .ion-md-close{
+         display: none;
+     }
+     nav.active .ion-md-close{
+         display: block;
+     }
+
+     nav.active .ion-md-menu{
+        display: none;
+    }
+    nav.active .nav-list{
+        display: flex;
+    }
+ }

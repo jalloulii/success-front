@@ -1,0 +1,117 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            <app-navbar></app-navbar>
+
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Courses Management</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+
+                <!--begin modal-->
+
+
+                <div class="table_users col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4 row">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">all courses
+                            </h6>
+                            <button routerLink="/add-course" class="btn btn-info">Add Course</button>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="card-body row">
+                            <!--BEGIN card-->
+                            <div *ngFor="let course of courses">
+                                <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-12">
+
+                                            <iframe width="100%" height="100%"
+                                                src="https://www.youtube.com/embed/UYbOnghi4ho" frameborder="0"
+                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text">This is a wider card with supporting text below as
+                                                    a
+                                                    natural
+                                                    lead-in to
+                                                    additional content. This content is a little bit longer.</p>
+                                                <div *ngIf="courses.length==7" class="badge-sm badge-danger badge">not
+                                                    viewed
+                                                </div>
+                                                <div *ngIf="courses.length==7" class="badge-sm badge-success badge">
+                                                    viwed
+                                                </div>
+                                                <button class="btn btn-sm" [ngClass]="{
+                                                    'btn-success':courses.length!=7,
+                                                    'btn-danger':courses.length==7
+                                                }">
+
+                                                    <i class="fas" [ngClass]="{
+                                                        'fa-user-check':courses.length!=7,
+                                                        'fa-user-lock':courses.length==7
+                                                    }"></i>
+
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--END card-->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--end modal-->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

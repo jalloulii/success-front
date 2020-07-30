@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://kit.fontawesome.com/6e6a680a88.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+
+
+    <title>e-Coaching.tn</title>
+ 
+</head>
+
+
+<body>
+    <!-- BEGIN navbar -->
+    <app-navbar></app-navbar>
+    <!-- END navbar -->
+
+    <!--BEGIN contenu mta3 lpage-->
+    <div class="container">
+        <section class="firstDivAfterNav"></section>
+        <div class="TitleOfPicture">
+            <h1 class="textInImg">upgrade your-self now!</h1>
+        </div>
+        <div class="ButtomOfPicture"> <button routerLink="/dashboard" style="border-radius: 40px;font-size: 13px;" class="btn btn-info">get
+                started!</button> </div>
+
+
+        <div class="partieCourses row">
+            <div class="col-12">
+
+                <h1 class="ourCourses">our courses</h1>
+
+            </div>
+            <!--khaaaaaddhrhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            <div class="khaadraaaaaaaaaaaaaaaaaaaaaaa PariteAnimation col-lg-4 col-12">
+
+            </div>
+-->
+            <!--BEGIN card-->
+            <div *ngFor="let course of courses" class="row">
+                <div class="card mb-3 ml-5" style=" width: 330px;max-width: 600px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UYbOnghi4ho"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <!--END card-->
+
+
+
+        </div>
+    </div>
+
+
+    <!--END contenu mta3 lpage-->
+
+    <br>
+
+    <!--BEGIN FOOTER-->
+    <app-footer></app-footer>
+    <!--END FOOTER-->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+    <script src="./js/navBar.js"></script>
+
+</body>
+
+</html>

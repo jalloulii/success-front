@@ -1,0 +1,198 @@
+.firstDivAfterNav{
+    
+    height: 630px;
+    width: 100%;
+    background-image: url(../../../../assets/imgs/team3.jpg);
+    filter: blur(2.3px);
+    -webkit-filter: blur(2.3px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.TitleOfPicture {
+    width: max-content;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-35%,-50%);
+    
+}
+.textInImg{
+    color: #F79F17;
+font-weight: 360;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.781);
+
+}
+.khat{
+    
+        width: 110px;
+        height: 4px;
+        margin: auto;
+        background-color: lightgrey;
+        display: block;
+        border-radius: 10px;
+        opacity: 1;
+    
+}
+em{
+    width: 50px;
+    height: 4px;
+    margin: auto;
+    background-color: #F79F17;
+    display: block;
+    border-radius: 10px;
+    opacity: 1;  
+}
+.wostKhat{
+    width: 35px;
+        height: 2px;
+        margin: auto;
+        background-color: rgb(255, 208, 0);
+        display: block;
+        border-radius: 5px;
+        opacity: 1;
+}
+
+.pageContenu{
+    height: max-content;
+    text-align: center;
+
+}
+
+.stats {
+    height: max-content;
+    margin-bottom: 150px;
+
+    margin-top: 100px;
+}
+
+.whyUsIMG{
+position: relative;
+    height: 300px;
+
+}
+
+.whyUsCard{
+    margin: 30px;
+    width: 170px;
+    height: 170px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    position: absolute;
+    top: 20%;
+    right: 6%;
+ 
+
+}
+.whyUsCard:hover {
+    
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+  }
+
+
+
+
+.allDivWhyUs{
+    display: flex;
+}
+
+
+
+@media screen and (max-width:1300px){
+    .imgWhy{
+        width: 420px !important;
+    }
+    .whyUsCard{
+        left: 124px;
+        
+        }
+}
+@media screen and (max-width:1208px){
+    .allDivWhyUs{
+        display: block;
+        
+    }
+    .whyUsIMG{
+        margin-left: 0 !important;
+        margin-top: 100px;
+    }
+    .whyUsCard{
+        left: 140px;
+        
+        }
+        .textInImg{
+            font-size: 60px !important;
+        }
+        .whyUsAnimationTexts{
+            left: 43% !important;
+
+        }
+}
+
+
+
+
+
+
+
+@media screen and (max-width:880px){
+    .whyUsAnimationTexts{
+        left: 40% !important;
+
+    }
+}
+
+
+
+
+
+@media screen and (max-width:800px){
+    .textInImg{
+        font-size: 40px !important;
+    }
+}
+
+
+
+@media screen and (max-width:660px){
+    .textInImg{
+        font-size: 30px !important;
+    padding-bottom: 140px !important;
+
+    }
+    .firstDivAfterNav{
+        height: 450px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:475px){
+
+.cool{
+left: 100%;
+}
+.whyUsCard{
+   left: 125px;
+    
+    } 
+    .textInImg2{
+        display: block !important;
+        font-size: 55px !important;
+    }
+    .textInImg{
+        display: none;
+    }
+}

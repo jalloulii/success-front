@@ -1,0 +1,29 @@
+html,body{
+    height: 100%;
+}
+.registerForm{
+    background-color: white;
+    width: 430px;
+    height: 100% !important;
+}
+body{
+    background-image: url(./../../../../assets/imgs/5973.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  
+   
+}
+.goRegister,.goLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width : 750px){
+    .registerForm{
+        background-color: white;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

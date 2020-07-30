@@ -1,0 +1,53 @@
+<ul class="navbar-nav color sidebar sidebar-dark accordion h-100" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/dashboard">
+        welcome {{welcomename}}
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" routerLink="/dashboard">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Home</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" routerLink="/why-us">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>About Us</span></a>
+    </li>
+
+
+
+
+
+    <!-- Nav Item - users -->
+    <li *ngIf="isAdmin" class="nav-item active">
+        <a routerLink="/user-list" class="nav-link">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>gestion des users</span></a>
+    </li>
+
+
+
+    <li *ngIf="isAdmin" class="nav-item active">
+        <a class="nav-link" routerLink="/courses-list">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>gestion des courses</span></a>
+    </li>
+
+    <li *ngIf="isAdmin" class="nav-item active">
+        <a routerLink="/profs-list" class="nav-link">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>gestion des profs</span></a>
+
+    </li>
+
+
+
+
+
+</ul>

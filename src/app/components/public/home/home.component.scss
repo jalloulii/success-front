@@ -1,0 +1,702 @@
+.profile{
+    background-color: rgba(37, 45, 59, 0.774);
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    position: relative;
+}
+.userInitial{
+    color: #FFCF58;
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.pro{
+    width: 415px !important;
+    left: -245px;
+    height: 485px;
+}
+
+.pro::before{
+    content: "" !important;
+    position: absolute !important;
+    top: -2.5rem !important;
+    left: 270px !important;
+    border: 1.2rem solid transparent !important;
+    border-bottom-color: #C19A3A !important;
+}
+.nameAndEmail{
+    height: 100px;
+    
+    margin-bottom: 20px;
+}
+.nameAndEmail:hover{
+    background-color: rgba(211, 211, 211, 0.692);
+}
+.profileLinks{
+    
+    height: 358px ;
+    width: 100%;
+}
+.linksOfProfile{
+    height: 80px;
+    
+}
+.myProfilelinks{
+    font-size: 22px;
+    color:#C19A3A ;
+    font-family: comic sans ms;
+    text-transform: lowercase;
+}
+.aprofile:hover{
+    background-color: rgba(211, 211, 211, 0.692);
+}
+
+
+body{
+    overflow-x: hidden !important;
+}
+.firstDivAfterNav{
+    
+    height: 630px;
+    width: 100%;
+    background-image: url(../../../../assets/imgs/women.jpg);
+    filter: blur(3.5px);
+    -webkit-filter: blur(3.5px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.TitleOfPicture {
+    width: max-content;
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-35%,-20%);
+    
+}
+.ButtomOfPicture{
+    width: max-content;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn-light{
+    background-color: rgb(240, 247, 255);
+    
+}
+.textInImg{
+    color: #F79F17;
+    font-size: 85px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.781);
+    font-weight: lighter;
+    font-family: comic sans-serif ;
+}
+/**************************************************/
+.partieCourses{
+    height: max-content;
+    
+    
+}
+
+.filter > li{
+    border-bottom: 2px rgba(0, 0, 0, 0.397) solid;
+    font-size: 13px;
+    font-weight: 900;
+    font-family: lato !important;
+    list-style-type: none;
+    display: inline-block;
+    padding: 14px 30px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+}
+
+.filter{
+    flex-direction: row !important;
+}
+.list-group-item{
+    border: none;
+}
+.wid{
+    align-items: center;
+    width: 200px;
+    text-align: center;
+}
+
+
+
+.dispnone{
+    display: none;
+}
+.list-group-item-warning {
+    width: 165px;
+    height: 45px;
+    color: #856404;
+    background-color: #ffeeba;
+}
+.nanAndCarousel{
+    display: flex;
+    
+    height: max-content;
+}
+.navwcar{
+    height: max-content;
+    width: max-content;
+    
+}
+.allPage{
+    
+    
+    height: max-content;
+}
+.PariteAnimation{
+    
+    width: max-content;
+    height: max-content;
+    
+    
+}
+.dispnone{
+    display: none;
+}
+.carouss{
+    margin: 0 !important;
+}
+.card{
+    width: 270px;
+}
+/*footer css*/
+.footer{
+    width: 100%;
+    height: max-content;
+    background-color: #121921;
+}
+.rowFooter{
+    
+    height: max-content;
+}
+
+.socialMediaIcons{
+    opacity: 70%;
+}
+.socialMediaIcons:hover{
+    opacity: 100%;
+    transition: ease-in .3s;
+}
+.footerBottom{
+    height: 50px;
+    background-color: #202935;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15.5px;
+    color: white;
+    font-family: comic sans ms;
+}
+.usefulLi{
+    margin-left: 68px;
+    margin-bottom: 16px;
+    width: max-content;
+}
+.usefulLi:hover{
+    margin-left: 85px;
+    transition: ease-in 0.1s;
+}
+
+.imgT{
+    opacity: 71%;
+}
+.opa{
+    opacity: 100%;
+}
+.Cli{
+    margin-left: 30px;   
+}
+.imgT{
+    margin-right: 10px;
+}
+.ourCourses{
+    letter-spacing: 13px;
+    font-size: 60px;
+    color: #F79F17;
+    margin: 20px 0 45px 0;
+    font-family: lato;
+}
+/*resonsive css*/
+@media screen and (max-width : 1290px){
+    .searchN{
+        width: 200px !important;
+    }
+    .anim{
+        width: 450px !important;
+        
+    }
+    
+    .card{
+        width: 250px !important;
+    }
+    
+    .list-group-item-warning{
+        width: 150px !important;
+    }
+    .filter{
+        margin-left: 52px !important;
+    }
+    
+    
+}
+
+@media screen and (max-width : 1170px){
+    
+    .filter{
+        margin-left: 5.5% !important;
+    }
+    .list-group-item-warning{
+        width: 141.5px !important;
+    }
+    .swiper-container {
+        
+        width: 600px !important;
+        
+    }
+    
+}
+
+@media screen and (max-width : 1107px){
+    .loginbtn{
+        width: 95px !important;
+        font-size: 12.5px !important;
+    } 
+    .signupbtn{
+        width: 95.4px !important;
+        font-size: 12.5px !important;
+    }    
+    .logo{
+        width: max-content;
+    }
+    .logoN{
+        width: 200px !important;
+    }
+    .nav-list{
+        left: 230px;
+    }
+    .btnC{
+        width: 150px !important;
+        font-size: 13.89px !important;
+    }
+}
+
+
+@media screen and (max-width : 1084px){
+    .anim{
+        margin-top: 15%;
+        width: 400px !important;
+    }
+    .card{
+        width: 230px !important;
+    }
+    .list-group-item-warning{
+        width: 130px !important;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+    }
+    
+    .nav-list{
+        left: 220px !important;
+    }
+    .swiper-container {
+        
+        width: 550px !important;
+        
+    }
+}
+
+@media screen and (max-width :991px){
+    .filterTeamnav{
+        
+        width: 180px !important;
+        
+        
+    }
+    
+    .swiper-container {
+        
+        margin-left: 13px;
+        width: 770px !important;
+        
+    }
+    .card{
+        width: 280px !important;
+    }
+    
+    .anim{
+        width: 550px !important;
+        margin-left: 140px;
+        margin-top: 100px !important;
+        
+    }
+    .khaadraaaaaaaaaaaaaaaaaaaaaaa{
+        height: 500px !important;
+        position: relative;
+        
+    }
+    .anim{
+        top: -100px;
+        position: absolute;
+        
+    }
+    .filter{
+        margin-left: 75px !important;
+        flex-direction: row;
+    }
+    .ll{
+        margin-left: 40px;
+        justify-content: flex-start !important;
+    }
+    .list-group-item-warning{
+        padding-right: 57px !important;
+        padding-left: 45px !important;
+        margin-left: 0 !important;
+    }
+    .textInImg{
+        font-size: 70px;
+    }
+    .firstDivAfterNav{
+        height: 540px !important;
+    }
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 770px){
+    .textInImg{
+        font-size: 60px;
+    }
+    .firstDivAfterNav{
+        height: 500px !important;
+    }
+    .list-group-item-warning{
+        padding-right: 32.5px !important;
+        padding-left: 32.5px !important;
+        margin-left: 0 !important;
+    }
+    .filter{
+        margin-left: 95px !important;
+    }
+    .swiper-container {
+        
+        margin-left: 60px !important;
+        width: 610px !important;
+        
+    }
+    .card{
+        width: 250px !important;
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 800px){
+    .anim{
+        margin-left: 80px;
+    }
+}
+@media screen and (max-width: 680px){
+    .anim{
+        margin-left: 50px;
+    }
+    .list-group-item-warning{
+        padding-right: 32.6px !important;
+        padding-left: 32.6px !important;
+        margin-left: 0 !important;
+    }
+    
+}
+@media screen and (max-width: 680px){
+    .anim{
+        
+        margin-left: 40px;
+    }
+}
+@media screen and (max-width: 630px){
+    .anim{
+        
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .anim{
+        
+        margin-left: 40px;
+    }
+}
+@media screen and (max-width: 480px){
+    .anim{
+        
+        margin-left: 40px;
+    }
+}
+
+
+
+@media screen and (max-width: 697px){
+    .textInImg{
+        font-size: 50px  !important;
+        
+    }
+    .firstDivAfterNav{
+        height: 400px !important;
+    }
+    .TitleOfPicture{
+        top: 250px;
+    }
+    .ButtomOfPicture{
+        top: 320px;
+    }
+    .anim{
+        width: 380px !important;
+        margin-left: 90px;
+    }
+    
+    .filterTeamnav{
+        width: 400px !important;
+        margin-left: -20px !important;
+    }
+    
+    .swiper-container {
+        
+        margin-left: 15px;
+        width: 400px !important;
+        
+    }
+    .filter{
+        flex-direction: column !important;
+        
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 530px){
+    .textInImg{
+        font-size: 40px  !important;
+        
+    }
+    .firstDivAfterNav{
+        height: 400px !important;
+    }
+    .TitleOfPicture{
+        top: 250px;
+    }
+    .ButtomOfPicture{
+        top: 320px;
+    }
+    .anim{
+        margin-left:70px !important;
+    }
+    
+    
+    
+    
+}
+.filter{
+    flex-direction: column;
+}
+
+
+
+
+
+
+@media screen and (max-width:460px){
+    .textInImg{
+        font-size: 40px  !important;
+        
+    }
+    .firstDivAfterNav{
+        height: 400px !important;
+    }
+    .TitleOfPicture{
+        top: 250px;
+    }
+    .ButtomOfPicture{
+        top: 320px;
+    }
+    .anim{
+        width: 300px !important;
+    }
+    
+    .list-group-item-warning{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        margin-left: 0 !important;
+    }
+    
+    .swiper-container {
+        
+        
+        width: 330px !important;
+        
+    }
+    .filterTeamnav{
+        width: 330px !important;
+        
+    }
+    
+}
+
+@media screen and (max-width:440px){
+    .textInImg{
+        font-size: 40px  !important;
+        
+    }
+    .firstDivAfterNav{
+        height: 400px !important;
+    }
+    .TitleOfPicture{
+        top: 250px;
+    }
+    .ButtomOfPicture{
+        top: 320px;
+    }
+    .anim{
+        width: 300px !important;
+        right: 70px !important;
+    }
+    
+    .list-group-item-warning{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        margin-left: 0 !important;
+    }
+    .filter{
+        right: 65px !important;
+    }
+    .swiper-container {
+        
+        right: 65px !important;
+        width: 330px !important;
+        
+    }
+    .filterTeamnav{
+        width: 330px !important;
+        
+    }
+    
+}
+
+@media screen and (max-width:390px){
+    .textInImg{
+        font-size: 40px  !important;
+        
+    }
+    .firstDivAfterNav{
+        height: 400px !important;
+    }
+    .TitleOfPicture{
+        top: 250px;
+    }
+    .ButtomOfPicture{
+        top: 320px;
+    }
+    .anim{
+        width: 300px !important;
+        right: 30px !important;
+    }
+    
+    .list-group-item-warning{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        margin-left: 0 !important;
+    }
+    .filter{
+        right: 65px !important;
+    }
+    .swiper-container {
+        
+        right: 65px !important;
+        width: 330px !important;
+        
+    }
+    .filterTeamnav{
+        width: 330px !important;
+        
+    }
+    
+}
+
+@media screen and (max-width:500px){
+    .textInImg{
+        font-size: 30px  !important;
+        
+    }
+    .firstDivAfterNav{
+        height: 350px !important;
+    }
+    .TitleOfPicture{
+        top: 250px;
+    }
+    .ButtomOfPicture{
+        top: 320px;
+    }
+    .anim{
+        width: 300px !important;
+    }
+    
+    .list-group-item-warning{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        margin-left: 0 !important;
+    }
+    
+    .swiper-container {
+        
+        
+        width: 330px !important;
+        
+    }
+    .filter{
+        margin-left: 75px !important;
+    }
+    .filterTeamnav{
+        width: 330px !important;
+        
+    }
+    
+}
+@media screen and (min-height : 0px   max-width 200px){
+    .TitleOfPicture{
+        top: 330px !important;
+    }
+    
+    .ButtomOfPicture{
+        top: 450px !important;
+    }
+    
+    
+}

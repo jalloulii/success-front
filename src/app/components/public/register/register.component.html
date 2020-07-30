@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/6e6a680a88.js" crossorigin="anonymous"></script>
+  <title>Title</title>
+</head>
+
+<body>
+
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser()" style="position: relative;" class="registerForm">
+
+
+    <app-logo></app-logo>
+    <div class="modal-body mx-3 mt-5">
+      <div style="margin-bottom: 70px;" class="md-form">
+        <i style="position: relative;" class="prefix"><img style="width: 35px;position: absolute;"
+            src="./media/user.png" alt=""></i>
+        <input formControlName="firstname" required style="margin-left: 42px; font-size: 18px;" type="text"
+          id="orangeForm-name" class="form-control" name="firstname">
+        <label style="font-size: 18px; margin-left: 42px;" data-error="wrong" data-success="right"
+          for="orangeForm-name">firstname
+        </label>
+        <div *ngIf="firstname.touched && firstname.invalid">
+          <div *ngIf="firstname.errors.required" class="text-danger ml-5">firstname is required</div>
+          <div *ngIf="firstname.errors.pattern" class="text-danger ml-5">invalid firstname</div>
+          <div *ngIf="firstname.errors.minlength" class="text-danger ml-5">firstname must contains a least 2 characters
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 70px;" class="md-form">
+        <i style="position: relative;" class="prefix"><img style="width: 35px;position: absolute;"
+            src="./media/user.png" alt=""></i>
+        <input formControlName="lastname" required style="margin-left: 42px; font-size: 18px;" type="text"
+          id="orangeForm-name" class="form-control" name="lastname">
+        <label style="font-size: 18px; margin-left: 42px;" data-error="wrong" data-success="right"
+          for="orangeForm-name">lastname
+        </label>
+        <div *ngIf="lastname.touched && lastname.invalid">
+          <div *ngIf="lastname.errors.required" class="text-danger ml-5">lastname is required</div>
+          <div *ngIf="lastname.errors.pattern" class="text-danger ml-5">invalid lastname</div>
+          <div *ngIf="lastname.errors.minlength" class="text-danger ml-5">lastname must contains a least 2 characters
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 70px;" class="md-form">
+        <i style="position: relative;" class="prefix"><img style="width: 32px;position: absolute;"
+            src="./media/mail.png" alt=""></i>
+        <input formControlName="email" required style="margin-left: 42px; font-size: 18px;" type="email"
+          id="orangeForm-email" class="form-control" name="email">
+        <label style="font-size: 18px; margin-left: 42px;" data-error="wrong" data-success="right"
+          for="orangeForm-email">Your email</label>
+        <div *ngIf="email.touched && email.invalid">
+          <div *ngIf="email.errors.required" class="text-danger ml-5">email is required</div>
+          <div *ngIf="email.errors.email" class="text-danger ml-5">invalid email</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 40px;" class="md-form">
+        <i style="position: relative;" class="prefix"><img style="width: 32px;position: absolute;"
+            src="./media/password.png" alt=""></i>
+        <input formControlName="password" required style="margin-left: 42px; font-size: 18px;" type="password"
+          id="orangeForm-pass" class="form-control" name="password">
+        <label style="font-size: 18px; margin-left: 42px;" data-error="wrong" data-success="right"
+          for="orangeForm-pass">Your password</label>
+        <div *ngIf="password.touched && password.invalid">
+          <div *ngIf="password.errors.required" class="text-danger ml-5">password is required</div>
+          <div *ngIf="password.errors.minlength" class="text-danger ml-5">password must contains a least 8 characters
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="height: 83px;" class=" d-flex justify-content-center">
+      <input [disabled]="registerForm.invalid" type="submit" value="sign up"
+        style="width: 160px; height: 45.8px;font-size: 14px;" class="btn btn-default">
+    </div>
+    <div class="goLogin">
+
+      <p style="font-family: comic sans ms;">already have an account? <a routerLink="/login">login</a> </p>
+
+    </div>
+    <div class="copyRightRegister" style="font-family: comic sans ms; color: rgb(139, 139, 139);">
+
+      <p> &copy; 2020 e-coaching.tn</p>
+    </div>
+  </form>
+
+</body>
+
+
+</html>
