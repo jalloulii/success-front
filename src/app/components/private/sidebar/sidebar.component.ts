@@ -6,7 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss', './../dashboard/dashboard.component.scss']
 })
 export class SidebarComponent implements OnInit {
   isAdmin: Boolean;
