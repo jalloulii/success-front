@@ -33,7 +33,7 @@
 
 
 
-    <li *ngIf="isAdmin" class="nav-item active">
+    <li *ngIf="isAdmin || isProf" class="nav-item active">
         <a class="nav-link" routerLink="/courses-list">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>gestion des courses</span></a>

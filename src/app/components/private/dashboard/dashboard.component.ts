@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { CourseService } from 'src/app/services/course-services/course.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,8 +9,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./dashboard.component.scss', '../../public/home/home.component.scss', '../../public/footer/footer.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  courses = ["yassine", "monda", "hsan", "imed", "mounir", "eljeya", "monji"]
-  constructor() { }
+  courses = []
+  constructor(private courseService: CourseService, private activeroute: ActivatedRoute, private router: Router,) { }
   public welcomename: String;
   ngOnInit(): void {
     let token = localStorage.getItem("token");
@@ -20,7 +22,15 @@ export class DashboardComponent implements OnInit {
 
 
     }
+    this.getAllCourses();
 
+
+  }
+
+  getAllCourses() {
+    this.courseService.allCourses().subscribe(res => {
+      this.courses = res;
+    })
   }
 
 }

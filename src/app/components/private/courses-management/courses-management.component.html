@@ -35,7 +35,7 @@
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">all courses
                             </h6>
-                            <button routerLink="/add-course" class="btn btn-info">Add Course</button>
+                            <button *ngIf="isProf" routerLink="/add-course" class="btn btn-info">Add Course</button>
                         </div>
 
                         <!-- Card Body -->
@@ -44,36 +44,32 @@
                             <div *ngFor="let course of courses">
                                 <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
                                     <div class="row no-gutters">
-                                        <div class="col-md-12">
-
-                                            <iframe width="100%" height="100%"
-                                                src="https://www.youtube.com/embed/UYbOnghi4ho" frameborder="0"
-                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen></iframe>
-
+                                        <!-- Card image -->
+                                        <div [routerLink]="['/view-course',course._id]" class="view overlay">
+                                            <img class="card-img-top"
+                                                src="./../../../../assets/imgs/defaultCoursePic.jpg"
+                                                alt="Card image cap">
+                                            <a>
+                                                <div class="mask rgba-white-slight"></div>
+                                            </a>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">This is a wider card with supporting text below as
-                                                    a
-                                                    natural
-                                                    lead-in to
-                                                    additional content. This content is a little bit longer.</p>
-                                                <div *ngIf="courses.length==7" class="badge-sm badge-danger badge">not
-                                                    viewed
+                                                <h5 class="card-title"> {{course.title}} </h5>
+                                                <p class="card-text"> {{course.description}} </p>
+                                                <div *ngIf="!course.etat" class="badge-sm badge-danger badge">inactive
                                                 </div>
-                                                <div *ngIf="courses.length==7" class="badge-sm badge-success badge">
-                                                    viwed
+                                                <div *ngIf="course.etat" class="badge-sm badge-success badge">active
                                                 </div>
-                                                <button class="btn btn-sm" [ngClass]="{
-                                                    'btn-success':courses.length!=7,
-                                                    'btn-danger':courses.length==7
+                                                <!-- (click)="updateUser(user)" --> <button class="btn btn-sm"
+                                                    [ngClass]="{
+                                                    'btn-success':!course.etat,
+                                                    'btn-danger':course.etat
                                                 }">
 
                                                     <i class="fas" [ngClass]="{
-                                                        'fa-user-check':courses.length!=7,
-                                                        'fa-user-lock':courses.length==7
+                                                        'fa-user-check':!course.etat,
+                                                        'fa-user-lock':course.etat
                                                     }"></i>
 
                                                 </button>

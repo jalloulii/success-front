@@ -34,6 +34,9 @@ import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toas
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddCourseComponent } from './components/private/courses-management/add-course/add-course.component';
+import { CourseClickedComponent } from './components/private/course-clicked/course-clicked.component';
+import { TestComponent } from './test/test.component';
+
 
 
 @NgModule({
@@ -59,7 +62,9 @@ import { AddCourseComponent } from './components/private/courses-management/add-
     UpdateUserComponent,
     CoursesManagementComponent,
     AddCourseComponent,
-
+    CourseClickedComponent,
+    TestComponent,
+    
 
 
 

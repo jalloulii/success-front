@@ -17,6 +17,7 @@ import { UpdateProfComponent } from './components/private/prof-managements/updat
 import { CoursesManagementComponent } from './components/private/courses-management/courses-management.component';
 import { ProfileComponent } from './components/private/profile/profile.component';
 import { AddCourseComponent } from './components/private/courses-management/add-course/add-course.component';
+import { CourseClickedComponent } from './components/private/course-clicked/course-clicked.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,11 @@ const routes: Routes = [
   {
     path: "add-course",
     component: AddCourseComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "view-course/:id",
+    component: CourseClickedComponent,
     canActivate: [AuthGuard],
   },
   {

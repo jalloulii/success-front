@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User, Prof } from './../../user/user.module';
+import { User } from './../../user/user.module';
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
@@ -17,12 +17,12 @@ export class ProfService {
   private _updateForm = this._baseLocalUrl + "/eprof/update-form";
   constructor(private http: HttpClient) { }
 
-  addProf(prof: Prof) {
+  addProf(prof: User) {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
     return this.http.post<any>(this._addProf, prof, { headers: headers_options });
   }
-  loginProf(user: User) {
-    return this.http.post<any>(this._loginProf, user);
+  loginProf(prof: User) {
+    return this.http.post<any>(this._loginProf, prof);
   }
   allProfs() {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));

@@ -1,0 +1,92 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+
+
+
+            <!-- BEGIN navbar -->
+            <app-navbar></app-navbar>
+            <!-- END navbar -->
+
+            <!--BEGIN contenu mta3 lpage-->
+
+            <div class="container-fluid">
+                <section style="background-image: url(../../../../assets/imgs/defaultCoursePic.jpg);"
+                    class="firstDivAfterNav"></section>
+                <div class="TitleOfPicture">
+                    <h2 class="textInImg"
+                        style="text-align: center;align-items: center;align-self: center;align-content: center;">
+                        {{title}} </h2>
+                    <h3 style="font-family: comic sans serif;
+                     color: #F79F17;
+                    font-size: 50px;
+                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.781);
+                    font-weight: lighter;
+                    font-family: comic sans-serif ;">{{description}}</h3>
+                </div>
+                <br>
+
+
+                <div class="row">
+                    <div class="card shadow mb-4 col-xl-12 col-lg-12">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary ">UPDATE USER
+                            </h6>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <div class="course-body">
+                                    <h2 style="font-family: comic sans serif;">{{lesson_body}}</h2>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--
+                                  <ion-button  fill="outline" expand="block">
+                    <lottie-player  slot="end" autoplay loop src="https://assets2.lottiefiles.com/private_files/lf30_2ZRMFN.json">
+                    </lottie-player>
+                </ion-button>
+                    -->
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--END contenu mta3 lpage-->
+
+            <br>
+
+            <!--BEGIN FOOTER-->
+            <app-footer></app-footer>
+            <!--END FOOTER-->
+
+
+
+        </div>
+        <!-- End of Main Content -->
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

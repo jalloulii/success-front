@@ -43,6 +43,20 @@ export class UserServiceService {
       }
     } else { return false; }
   }
+  isLoggedProf() {
+    let token = localStorage.getItem("token");
+    if (token) {
+      const helper = new JwtHelperService();
+      const decodedToken = helper.decodeToken(token);
+
+      if (decodedToken.role == "prof") {
+        console.log(decodedToken.etat);
+        return true;
+      } else {
+        return false;
+      }
+    } else { return false; }
+  }
   isLoggedIn() {
     let token = localStorage.getItem("token");
 

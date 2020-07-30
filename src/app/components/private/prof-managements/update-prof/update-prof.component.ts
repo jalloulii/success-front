@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ProfService } from 'src/app/services/profs-services/prof.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Prof } from 'src/app/user/user.module';
+import { User } from 'src/app/user/user.module';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-update-prof',
@@ -75,12 +75,12 @@ export class UpdateProfComponent implements OnInit {
   updateInfoProf() {
     let userId = this.activeroute.snapshot.params.id;
     let data = this.updateProf.value;
-    let user = new Prof(null, data.firstname, data.lastname, data.email, null);
+    let user = new User(null, data.firstname, data.lastname, data.email, null);
     this.profservice.updateForm(userId, user).subscribe(res => {
       console.log("user Info updated");
       console.log(res);
       this.router.navigateByUrl('/profs-list');
-      this.toastr.success('Prof Updated Successfully!');
+      this.toastr.success('User Updated Successfully!');
     }, err => { console.log("user not updated"); })
   }
 

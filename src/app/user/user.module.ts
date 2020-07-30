@@ -11,14 +11,16 @@ export class User {
     ) { }
 
 }
-export class Prof {
+
+export class Course {
 
     constructor(
         private _id?: String,
-        private _firstname?: String,
-        private _lastname?: String,
-        private _email?: String,
-        private _password?: String,
+        private _title?: String,
+        private _description?: String,
+        private _price?: String,
+        private _instructor?: String,
+        private _lesson_body?: String,
     ) { }
 
 }

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms"; // zedna hedhy
 import { Router } from '@angular/router';
-import { User } from 'src/app/user/user.module';
+import { User, Course } from 'src/app/user/user.module';
 import { UserServiceService } from 'src/app/services/users-services/user-service.service';
 import { ToastrService } from 'ngx-toastr'
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { CourseService } from 'src/app/services/course-services/course.service';
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
@@ -18,26 +19,30 @@ export class AddCourseComponent implements OnInit {
   constructor(public fb: FormBuilder,
     private router: Router,
     private userService: UserServiceService,
+    private courseSerivce: CourseService,
     private toastr: ToastrService,
     private http: HttpClient,
 
   ) {
     // zedneh ahna lel control
     let addUserControll = {
-      firstname: new FormControl("", [
+      title: new FormControl("", [
         Validators.required,
         Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
         Validators.pattern("[A-Za-z0-9 .'-]+"), // regEx , expression reguliaire
       ]),
-      lastname: new FormControl("", [
+      price: new FormControl("", [
         Validators.required,
-        Validators.minLength(2),
         Validators.pattern("[0-9]+"),
       ]),
       description: new FormControl("", [
         Validators.required,
         Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
         Validators.pattern("[A-Za-z0-9 .'-]+"), // regEx , expression reguliaire
+      ]),
+      lesson_body: new FormControl("", [
+        Validators.required,
+        Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
       ]),
     }
     // zedna edha lel liaison inputs to form
@@ -49,9 +54,10 @@ export class AddCourseComponent implements OnInit {
 
   // function errors 
 
-  get myfirstname() { return this.addUeser.get('firstname'); }
-  get mylastname() { return this.addUeser.get('lastname'); }
+  get mytitle() { return this.addUeser.get('title'); }
+  get myprice() { return this.addUeser.get('price'); }
   get mydescription() { return this.addUeser.get('description'); }
+  get mylesson_body() { return this.addUeser.get('lesson_body'); }
 
 
   uploadedFiles: Array<File>;
@@ -73,21 +79,25 @@ export class AddCourseComponent implements OnInit {
   }
 
 
-  addUser() {
+  addCourse() {
     let data = this.addUeser.value;
-
-    let user = new User(
+    let price = data.price;
+    if (price == 0) {
+      price = "free";
+    }
+    let course = new Course(
       null,
-      data.firstname,
-      data.lastname,
-      data.email,
-      data.password,
+      data.title,
+      data.description,
+      price,
+      null,
+      data.lesson_body,
     );
-    this.userService.registerUser(user).subscribe(
+    this.courseSerivce.addCourse(course).subscribe(
       res => {
         console.log(res);
-        this.toastr.success("User Added successfully");
-        this.router.navigateByUrl('/user-list')
+        this.toastr.success("Course Added successfully");
+        this.router.navigateByUrl('/courses-list')
       },
       err => {
         this.toastr.error("Error Adding User");

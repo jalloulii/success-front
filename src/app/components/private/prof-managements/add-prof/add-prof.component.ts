@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms"; // zedna hedhy
 
 import { Router } from '@angular/router';
-import { Prof } from 'src/app/user/user.module';
+import { User } from 'src/app/user/user.module';
 import { ProfService } from 'src/app/services/profs-services/prof.service';
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -62,7 +62,7 @@ export class AddProfComponent implements OnInit {
   addProf() {
     let data = this.addUeser.value;
 
-    let prof = new Prof(
+    let prof = new User(
       null,
       data.firstname,
       data.lastname,
@@ -72,7 +72,7 @@ export class AddProfComponent implements OnInit {
     this.profService.addProf(prof).subscribe(
       res => {
         this.router.navigateByUrl('/profs-list');
-        this.toastr.success('Prof Added Successfully!');
+        this.toastr.success('User Added Successfully!');
       },
       err => {
         console.log(err);

@@ -41,31 +41,30 @@
                         <!-- Card Body -->
                         <div class="card-body">
                             <div class="chart-area">
-                                <form [formGroup]="addUeser" (ngSubmit)="addUser()" class="mx-3">
+                                <form [formGroup]="addUeser" (ngSubmit)="addCourse()" class="mx-3">
                                     <div class="md-form mb-5">
                                         <i class="fas fa-user prefix grey-text"></i>
-                                        <input formControlName="firstname" type="text" id="orangeForm-name"
+                                        <input formControlName="title" type="text" id="orangeForm-name"
                                             class="form-control">
                                         <label data-error="wrong" data-success="right" for="orangeForm-name">Course
                                             Title</label>
-                                        <div class="text-danger" *ngIf="myfirstname.touched && myfirstname.invalid">
-                                            <div *ngIf="myfirstname.errors.required">Course Title is required</div>
-                                            <div *ngIf="myfirstname.errors.pattern">Course Title in invalid</div>
-                                            <div *ngIf="myfirstname.errors.minlength">Course Title must contains 2
+                                        <div class="text-danger" *ngIf="mytitle.touched && mytitle.invalid">
+                                            <div *ngIf="mytitle.errors.required">Course Title is required</div>
+                                            <div *ngIf="mytitle.errors.pattern">Course Title in invalid</div>
+                                            <div *ngIf="mytitle.errors.minlength">Course Title must contains 2
                                                 characteres at least</div>
                                         </div>
                                     </div>
                                     <div class="md-form mb-5">
                                         <i class="fas fa-user prefix grey-text"></i>
-                                        <input formControlName="lastname" type="text" id="orangeForm-name"
+                                        <input formControlName="price" type="text" id="orangeForm-name"
                                             class="form-control">
                                         <label data-error="wrong" data-success="right" for="orangeForm-name">Course
                                             Price</label>
-                                        <div class="text-danger" *ngIf="mylastname.touched && mylastname.invalid">
-                                            <div *ngIf="mylastname.errors.required">Course price is required</div>
-                                            <div *ngIf="mylastname.errors.pattern">Course price in invalid</div>
-                                            <div *ngIf="mylastname.errors.minlength">Course price must contains 2
-                                                characteres at least</div>
+                                        <div class="text-danger" *ngIf="myprice.touched && myprice.invalid">
+                                            <div *ngIf="myprice.errors.required">Course price is required</div>
+                                            <div *ngIf="myprice.errors.pattern">Course price in invalid</div>
+                                          
                                         </div>
                                     </div>
                                     <div class="md-form mb-5">
@@ -90,44 +89,28 @@
 
 
                                     </div>
-                                    <div class="md-form mb-5 ml-4">
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                                    aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Choose 1
-                                                    video</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mainContainer">
-                                        <div class="content">
-                                            <div class="row margin25">
-                                                <div class="md-form ml-4 col-md-12">
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <form action="/api/upload" method="post"
-                                                                enctype="multipart/form-data">
-                                                                <input type="file" class="custom-file-input"
-                                                                    id="inputGroupFile01"
-                                                                    aria-describedby="inputGroupFileAddon01">
-                                                            </form>
-                                                            <label class="custom-file-label"
-                                                                for="inputGroupFile01">Choose 1
-                                                                video</label>
+                                    <div class="md-form mb-5">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <!--Material textarea-->
 
-                                                        </div>
-                                                        <input (change)="fileChange($event)" type="file"
-                                                            class="custom-file-input" id="inputGroupFile01"
-                                                            aria-describedby="inputGroupFileAddon01">
+                                        <textarea formControlName="lesson_body" id="form7"
+                                            class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="form7">Course Body</label>
 
-                                                        <span class="input-group-text upload" (click)="upload()"
-                                                            id="btnUpload">Upload</span>
-                                                    </div>
-                                                </div>
+
+                                        <div class="text-danger" *ngIf="mylesson_body.touched && mylesson_body.invalid">
+                                            <div *ngIf="mylesson_body.errors.required">Course Body is required
                                             </div>
+
+                                            <div *ngIf="mylesson_body.errors.minlength">Course Body must contains
+                                                at
+                                                least 2
+                                                characteres</div>
                                         </div>
+
+
                                     </div>
+
                                     <div class="d-flex justify-content-center">
                                         <div>
                                             <input type="submit" value="add course" [disabled]="addUeser.invalid "

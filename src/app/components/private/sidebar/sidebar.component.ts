@@ -18,6 +18,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.isAdmin = this.userService.isLoggedAdmin();
     this.isUser = this.userService.isLoggedUser();
+    this.isProf = this.userService.isLoggedProf();
 
     let token = localStorage.getItem("token");
 
