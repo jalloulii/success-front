@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/services/users-services/user-service.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
+import { CourseService } from 'src/app/services/course-services/course.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,9 +12,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: Boolean;
+  isLogedAdmin: Boolean;
   public fullname: String;
   public email: String;
-  constructor(private userService: UserServiceService, private router: Router, private toastr: ToastrService) {
+  false_courses: String;
+  courses = []
+  courses_false = []
+  constructor(private userService: UserServiceService, private courseService: CourseService, private router: Router, private toastr: ToastrService) {
 
   }
 
@@ -32,14 +37,36 @@ export class NavbarComponent implements OnInit {
       this.email = email;
       console.log(email);
     }
-
-
-
+    this.isLogedAdmin = this.userService.isLoggedAdmin()
+    this.getAllCourses();
+    this.falseCourses();
   }
   logout() {
     localStorage.removeItem("token");
     this.router.navigate(['/login']);
     this.toastr.error('Logged Out successfully!');
   }
+  getAllCourses() {
+    this.courseService.allCourses().subscribe(res => {
+      this.courses = res;
+      console.log(res)
+    })
+  }
+  falseCourses() {
+    this.courseService.allFalseCourses().subscribe(res => {
+      this.courses_false = res;
+      this.falseCourses();
+    })
+  }
+  /*
+  falseCourses() {
+    for (let i = 0; i <= this.courses.length; i++) {
+      if (this.courses[i].etat == false) {
+        console.log("t3ada")
+        this.courses[i] = this.courses_false;
+      }
+    }
 
+  }
+  */
 }

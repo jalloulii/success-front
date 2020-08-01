@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.getAllCourses();
   }
   getAllCourses() {
-    this.courseService.allCourses().subscribe(res => {
+    this.courseService.allTrueCourses().subscribe(res => {
       this.courses = res;
     })
   }

@@ -19,8 +19,12 @@ export class Course {
         private _title?: String,
         private _description?: String,
         private _price?: String,
-        private _instructor?: String,
         private _lesson_body?: String,
+        private _quiz_question?: String,
+        private _quiz_choix_1?: String,
+        private _quiz_choix_2?: String,
+        private _quiz_choix_3?: String,
+        private _quiz_real_reply?: String,
     ) { }
 
 }

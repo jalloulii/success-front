@@ -318,6 +318,12 @@
                             Up</button></a>
                 </li>
 
+                <li routerLink="/courses-list" *ngIf="isLogedAdmin"> <button style="width: 200px;height: 46px;" type="button"
+                        class="btn btn-danger">inactive courses :
+                        <span style="font-size: 20px;" class="badge ml-2"> {{courses_false.length}} </span>
+                    </button>
+                </li>
+
 
                 <li *ngIf="isLoggedIn" style="   left: 150px;">
                     <button class="btn profile">

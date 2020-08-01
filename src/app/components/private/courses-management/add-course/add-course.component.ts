@@ -44,6 +44,26 @@ export class AddCourseComponent implements OnInit {
         Validators.required,
         Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
       ]),
+      quiz_question: new FormControl("", [
+        Validators.required,
+        Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
+      ]),
+      quiz_choix_1: new FormControl("", [
+        Validators.required,
+        Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
+      ]),
+      quiz_choix_2: new FormControl("", [
+        Validators.required,
+        Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
+      ]),
+      quiz_choix_3: new FormControl("", [
+        Validators.required,
+        Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
+      ]),
+
+      quiz_real_reply: new FormControl("", [
+        Validators.required,                                                           // new FormControl()  hoaa construtor
+      ]),
     }
     // zedna edha lel liaison inputs to form
     this.addUeser = fb.group(addUserControll); // amalna liaison bin les input w lformulaire !
@@ -58,6 +78,11 @@ export class AddCourseComponent implements OnInit {
   get myprice() { return this.addUeser.get('price'); }
   get mydescription() { return this.addUeser.get('description'); }
   get mylesson_body() { return this.addUeser.get('lesson_body'); }
+  get myquiz_question() { return this.addUeser.get('quiz_question'); }
+  get myquiz_choix_1() { return this.addUeser.get('quiz_choix_1'); }
+  get myquiz_choix_2() { return this.addUeser.get('quiz_choix_2'); }
+  get myquiz_choix_3() { return this.addUeser.get('quiz_choix_3'); }
+  get myquiz_real_reply() { return this.addUeser.get('quiz_real_reply'); }
 
 
   uploadedFiles: Array<File>;
@@ -90,8 +115,12 @@ export class AddCourseComponent implements OnInit {
       data.title,
       data.description,
       price,
-      null,
       data.lesson_body,
+      data.quiz_question,
+      data.quiz_choix_1,
+      data.quiz_choix_2,
+      data.quiz_choix_3,
+      data.quiz_real_reply,
     );
     this.courseSerivce.addCourse(course).subscribe(
       res => {

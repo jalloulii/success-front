@@ -57,12 +57,16 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"> {{course.title}} </h5>
                                                 <p class="card-text"> {{course.description}} </p>
-                                                <div *ngIf="!course.etat" class="badge-sm badge-danger badge">inactive
+                                                <div *ngIf="!course.etat"
+                                                    style="width: 60px;height: 20px;font-size: 14px;"
+                                                    class="badge-sm badge-danger badge">inactive
                                                 </div>
-                                                <div *ngIf="course.etat" class="badge-sm badge-success badge">active
+                                                <div *ngIf="course.etat"
+                                                    style="width: 60px;height: 20px;font-size: 14px;"
+                                                    class="badge-sm badge-success badge">active
                                                 </div>
-                                                <!-- (click)="updateUser(user)" --> <button class="btn btn-sm"
-                                                    [ngClass]="{
+                                                <button style="margin-left: 20px;" (click)="updateCourse(course)"
+                                                    class="btn btn-sm" [ngClass]="{
                                                     'btn-success':!course.etat,
                                                     'btn-danger':course.etat
                                                 }">
@@ -72,6 +76,10 @@
                                                         'fa-user-lock':course.etat
                                                     }"></i>
 
+                                                </button>
+                                                <button style="right: 10%;position: absolute;" type="button"
+                                                    class="btn btn-primary">
+                                                    {{course.price}} <small *ngIf="course.price!='free'">DT</small>
                                                 </button>
                                             </div>
                                         </div>

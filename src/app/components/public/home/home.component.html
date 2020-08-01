@@ -15,7 +15,7 @@
 
 
     <title>e-Coaching.tn</title>
- 
+
 </head>
 
 
@@ -30,7 +30,8 @@
         <div class="TitleOfPicture">
             <h1 class="textInImg">upgrade your-self now!</h1>
         </div>
-        <div class="ButtomOfPicture"> <button routerLink="/dashboard" style="border-radius: 40px;font-size: 13px;" class="btn btn-info">get
+        <div class="ButtomOfPicture"> <button routerLink="/dashboard" style="border-radius: 40px;font-size: 13px;"
+                class="btn btn-info">get
                 started!</button> </div>
 
 
@@ -50,20 +51,21 @@
                 <div class="card mb-3 ml-5" style=" width: 330px;max-width: 600px;">
                     <div class="row no-gutters">
                         <div class="col-md-12">
-
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UYbOnghi4ho"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                            <!-- Card image -->
+                            <div [routerLink]="['/view-course',course._id]" class="view overlay">
+                                <img class="card-img-top" src="./../../../../assets/imgs/defaultCoursePic.jpg"
+                                    alt="Card image cap">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
 
                         </div>
                         <div class="col-md-12">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to
-                                    additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h3 class="card-title">{{course.title}}</h3>
+                                <button type="button" class="btn btn-primary"> {{course.price}} <small
+                                        *ngIf="course.price!='free'">DT</small> </button>
                             </div>
                         </div>
                     </div>

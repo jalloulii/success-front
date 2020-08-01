@@ -42,7 +42,7 @@
                     <div class="card shadow mb-4 col-xl-12 col-lg-12">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary ">UPDATE USER
+                            <h6 class="m-0 font-weight-bold text-primary ">COURSE BODY
                             </h6>
 
                         </div>
@@ -51,6 +51,96 @@
                             <div class="chart-area">
                                 <div class="course-body">
                                     <h2 style="font-family: comic sans serif;">{{lesson_body}}</h2>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--
+                                  <ion-button  fill="outline" expand="block">
+                    <lottie-player  slot="end" autoplay loop src="https://assets2.lottiefiles.com/private_files/lf30_2ZRMFN.json">
+                    </lottie-player>
+                </ion-button>
+                    -->
+
+
+
+                    </div>
+                    <div class="card shadow mb-4 col-xl-12 col-lg-12">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary ">COURSE QUIZ
+                            </h6>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <div class="course-body row">
+
+                                    <ul class="list-group col-6">
+                                        <li class="list-group-item list-group-item-action list-group-item-info">
+                                            <h2 style="font-family: comic sans serif;"> {{quiz_question}} </h2>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <h5>A- {{quiz_choix_1}} </h5>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <h5>B- {{quiz_choix_2}} </h5>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <h5>C- {{quiz_choix_3}} </h5>
+                                        </li>
+
+                                    </ul>
+                                    <div class="col-3">
+                                        <form [formGroup]="user_reply" (ngSubmit)="verifAnswer()"
+                                            style="position: relative;" class="registerForm">
+                                            <div class="md-form mb-4">
+                                                <i style="position: relative;" class="prefix"><img
+                                                        style="width: 32px;position: absolute;"
+                                                        src="./media/password.png" alt=""></i>
+                                                <input formControlName="quiz_user_reply" required
+                                                    style="margin-left: 42px;font-size: 18px;" type="text"
+                                                    id="defaultForm-pass" class="form-control" name="text">
+                                                <label style="font-size: 18px; position: absolute; margin-left: 42px;"
+                                                    data-error="wrong" data-success="right" for="defaultForm-pass">a , b
+                                                    or
+                                                    c ?</label>
+                                                <div class="text-danger"
+                                                    *ngIf="myquiz_user_reply.touched && myquiz_user_reply.invalid">
+                                                    <div *ngIf="myquiz_user_reply.errors.required">Quiz User Reply
+                                                        is required
+                                                    </div>
+                                                    <div *ngIf="myquiz_user_reply.errors.pattern">you can only use one
+                                                        of those letters :
+                                                        a/b/c in lowercase
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-center mt-3">
+                                                <input [disabled]="user_reply.invalid" type="submit" value="send answer"
+                                                    class="btn btn-warning">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-3">
+
+
+                                        <lottie-player *ngIf="result_false"
+                                            src="https://assets3.lottiefiles.com/private_files/lf30_jq4i7W.json"
+                                            background="transparent" speed="1" style="width: 300px; height: 300px;"
+                                            autoplay></lottie-player>
+                                        <script
+                                            src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                        <lottie-player *ngIf="result_true"
+                                            src="https://assets1.lottiefiles.com/datafiles/zWCwScboaLCVrzc/data.json"
+                                            background="transparent" speed="0.7" style="width: 300px; height: 300px;"
+                                            autoplay></lottie-player>
+
+                                    </div>
                                 </div>
 
                             </div>

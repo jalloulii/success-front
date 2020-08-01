@@ -25,18 +25,21 @@ export class CoursesManagementComponent implements OnInit {
       this.courses = res;
     })
   }
-  /*
-    updateUser(user) {
-  
-      this.userService.updateUser(user._id).subscribe(
-        res => {
-          console.log('user updated');
-          this.getAllUsers();
-        },
-        err => {
-          console.log('user not updated');
-        }
-      );
-    }
-    */
+
+  updateCourse(course) {
+
+    this.courseService.updateCourseState(course._id).subscribe(
+
+      res => {
+        console.log(res)
+        console.log('course updated');
+        this.getAllCourses();
+      },
+      err => {
+        console.log(course._id);
+        console.log('course not updated');
+      }
+    );
+  }
+
 }

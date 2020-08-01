@@ -28,8 +28,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getAllCourses() {
-    this.courseService.allCourses().subscribe(res => {
+    this.courseService.allTrueCourses().subscribe(res => {
       this.courses = res;
+      console.log(res)
     })
   }
 
