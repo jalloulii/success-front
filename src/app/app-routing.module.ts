@@ -18,6 +18,7 @@ import { CoursesManagementComponent } from './components/private/courses-managem
 import { ProfileComponent } from './components/private/profile/profile.component';
 import { AddCourseComponent } from './components/private/courses-management/add-course/add-course.component';
 import { CourseClickedComponent } from './components/private/course-clicked/course-clicked.component';
+import { AddSoldeComponent } from './components/private/profile/solde-management/add-solde/add-solde.component';
 
 const routes: Routes = [
   {
@@ -90,6 +91,11 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "add-solde/:id",
+    component: AddSoldeComponent,
     canActivate: [AuthGuard],
   },
   {

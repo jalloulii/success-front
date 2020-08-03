@@ -107,9 +107,7 @@ export class AddCourseComponent implements OnInit {
   addCourse() {
     let data = this.addUeser.value;
     let price = data.price;
-    if (price == 0) {
-      price = "free";
-    }
+ 
     let course = new Course(
       null,
       data.title,
@@ -129,7 +127,7 @@ export class AddCourseComponent implements OnInit {
         this.router.navigateByUrl('/courses-list')
       },
       err => {
-        this.toastr.error("Error Adding User");
+        this.toastr.error("Error Adding Course");
       }
     )
   }

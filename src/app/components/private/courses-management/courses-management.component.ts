@@ -8,8 +8,10 @@ import { CourseService } from 'src/app/services/course-services/course.service';
   styleUrls: ['./courses-management.component.scss', './../dashboard/dashboard.component.scss']
 })
 export class CoursesManagementComponent implements OnInit {
-  courses = []
+
   constructor(private userService: UserServiceService, private courseService: CourseService) { }
+  courses = []
+  Fcourses = []
   isAdmin: Boolean;
   isUser: Boolean;
   isProf: Boolean;
@@ -17,12 +19,18 @@ export class CoursesManagementComponent implements OnInit {
     this.isAdmin = this.userService.isLoggedAdmin();
     this.isUser = this.userService.isLoggedUser();
     this.isProf = this.userService.isLoggedProf();
-    this.getAllCourses();
+    this.getAllTrueCourses();
+    this.getAllFalseCourses();
   }
 
-  getAllCourses() {
-    this.courseService.allCourses().subscribe(res => {
+  getAllTrueCourses() {
+    this.courseService.allTrueCourses().subscribe(res => {
       this.courses = res;
+    })
+  }
+  getAllFalseCourses() {
+    this.courseService.allFalseCourses().subscribe(res => {
+      this.Fcourses = res;
     })
   }
 
@@ -31,12 +39,13 @@ export class CoursesManagementComponent implements OnInit {
     this.courseService.updateCourseState(course._id).subscribe(
 
       res => {
-        console.log(res)
+
         console.log('course updated');
-        this.getAllCourses();
+        this.getAllTrueCourses();
+        this.getAllFalseCourses();
       },
       err => {
-        console.log(course._id);
+
         console.log('course not updated');
       }
     );

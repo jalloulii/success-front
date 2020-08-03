@@ -8,6 +8,7 @@ export class User {
         private _lastname?: String,
         private _email?: String,
         private _password?: String,
+        private _solde?: Number,
     ) { }
 
 }

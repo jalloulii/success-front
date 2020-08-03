@@ -10,7 +10,7 @@ import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
   styleUrls: ['./course-clicked.component.scss', './../dashboard/dashboard.component.scss', './../../public/home/home.component.scss']
 })
 export class CourseClickedComponent implements OnInit {
-
+  coursePrice: Number;
   result_false: Boolean;
   result_true: Boolean;
 
@@ -46,6 +46,7 @@ export class CourseClickedComponent implements OnInit {
       .subscribe(res => {
         this.title = res.title;
         this.description = res.description;
+        this.coursePrice = res.price;
         this.lesson_body = res.lesson_body;
         this.quiz_question = res.quiz_question;
         this.quiz_choix_1 = res.quiz_choix_1;

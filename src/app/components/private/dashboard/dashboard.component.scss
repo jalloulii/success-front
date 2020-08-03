@@ -11008,3 +11008,16 @@
 .color{
   background-color:#C19A3A;
 }
+@media screen and (max-width:1060px){
+  .textInImg{
+    font-size: 60px !important ;
+  }
+}
+@media screen and (max-width:840px){
+  .textInImg{
+    font-size: 50px !important ;
+  }
+  .TitleOfPicture{
+    margin-left: 40px !important;
+  }
+}

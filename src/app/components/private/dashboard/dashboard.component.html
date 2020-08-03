@@ -22,9 +22,9 @@
             <!--BEGIN contenu mta3 lpage-->
             <div class="container">
                 <section class="firstDivAfterNav"></section>
-                <div class="TitleOfPicture">
+                <div style="margin-left: 100px;" class="TitleOfPicture">
                     <h2 class="textInImg" style="text-align: center;">upgrade your-self now</h2>
-                    <h2 class="textInImg" style="text-align: center;"> {{welcomename}} </h2>
+                    <h2 class="textInImg" style="text-align: center;"> {{welcomename}}</h2>
                 </div>
 
 
@@ -66,7 +66,8 @@
                                 <!-- Text -->
                                 <p class="card-text"> {{course.description}} </p>
                                 <!-- Button -->
-                                <button type="button" class="btn btn-primary"> {{course.price}} <small
+                                <button (click)="payment(course._id)" [routerLink]="['/view-course',course._id]"
+                                    type="button" class="btn btn-primary"> {{course.price}} <small
                                         *ngIf="course.price!='free'">DT</small> </button>
 
                             </div>

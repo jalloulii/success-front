@@ -171,23 +171,7 @@ body{
     width: 270px;
 }
 /*footer css*/
-.footer{
-    width: 100%;
-    height: max-content;
-    background-color: #121921;
-}
-.rowFooter{
-    
-    height: max-content;
-}
 
-.socialMediaIcons{
-    opacity: 70%;
-}
-.socialMediaIcons:hover{
-    opacity: 100%;
-    transition: ease-in .3s;
-}
 .footerBottom{
     height: 50px;
     background-color: #202935;
@@ -199,28 +183,7 @@ body{
     color: white;
     font-family: comic sans ms;
 }
-.usefulLi{
-    margin-left: 68px;
-    margin-bottom: 16px;
-    width: max-content;
-}
-.usefulLi:hover{
-    margin-left: 85px;
-    transition: ease-in 0.1s;
-}
 
-.imgT{
-    opacity: 71%;
-}
-.opa{
-    opacity: 100%;
-}
-.Cli{
-    margin-left: 30px;   
-}
-.imgT{
-    margin-right: 10px;
-}
 .ourCourses{
     letter-spacing: 13px;
     font-size: 60px;
@@ -494,6 +457,9 @@ body{
         flex-direction: column !important;
         
     }
+    .ourCourses{
+        font-size: 40px;
+    }
 }
 
 
@@ -647,7 +613,18 @@ body{
         width: 330px !important;
         
     }
+  
     
+}
+@media screen and (max-width: 393px){
+    .ourCourses{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 342px){
+    .ourCourses{
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width:500px){

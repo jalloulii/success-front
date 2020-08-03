@@ -14,8 +14,10 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: Boolean;
   isLogedAdmin: Boolean;
   public fullname: String;
+  public solde: Number;
   public email: String;
   false_courses: String;
+  idU: String;
   courses = []
   courses_false = []
   constructor(private userService: UserServiceService, private courseService: CourseService, private router: Router, private toastr: ToastrService) {
@@ -32,14 +34,21 @@ export class NavbarComponent implements OnInit {
       const help = new JwtHelperService();
       const fullname = help.decodeToken(token).firstname;
       this.fullname = fullname;
-
       const email = help.decodeToken(token).email;
       this.email = email;
-      console.log(email);
+      const solde = help.decodeToken(token).solde;
+      const id = help.decodeToken(token).id;
+      this.solde = solde;
+      this.idU = id;
     }
     this.isLogedAdmin = this.userService.isLoggedAdmin()
     this.getAllCourses();
     this.falseCourses();
+
+    const selectElement = (element) => document.querySelector(element);
+    selectElement('.menu-icons').addEventListener('click', () => {
+      selectElement('nav').classList.toggle('active');
+    });
   }
   logout() {
     localStorage.removeItem("token");

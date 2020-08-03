@@ -29,6 +29,69 @@
                 <!--begin modal-->
 
 
+                <div *ngIf="isAdmin" class="table_users col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4 row">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">inactive courses
+                            </h6>
+                            <button *ngIf="isProf" routerLink="/add-course" class="btn btn-info">Add Course</button>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="card-body row">
+                            <!--BEGIN card-->
+                            <div *ngFor="let course of Fcourses">
+                                <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
+                                    <div class="row no-gutters">
+                                        <!-- Card image -->
+                                        <div [routerLink]="['/view-course',course._id]" class="view overlay">
+                                            <img class="card-img-top"
+                                                src="./../../../../assets/imgs/defaultCoursePic.jpg"
+                                                alt="Card image cap">
+                                            <a>
+                                                <div class="mask rgba-white-slight"></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body">
+                                                <h5 class="card-title"> {{course.title}} </h5>
+                                                <p class="card-text"> {{course.description}} </p>
+                                                <div *ngIf="!course.etat"
+                                                    style="width: 60px;height: 20px;font-size: 14px;"
+                                                    class="badge-sm badge-danger badge">inactive
+                                                </div>
+                                                <div *ngIf="course.etat"
+                                                    style="width: 60px;height: 20px;font-size: 14px;"
+                                                    class="badge-sm badge-success badge">active
+                                                </div>
+                                                <button style="margin-left: 20px;" (click)="updateCourse(course)"
+                                                    class="btn btn-sm" [ngClass]="{
+                                                    'btn-success':!course.etat,
+                                                    'btn-danger':course.etat
+                                                }">
+
+                                                    <i class="fas" [ngClass]="{
+                                                        'fa-user-check':!course.etat,
+                                                        'fa-user-lock':course.etat
+                                                    }"></i>
+
+                                                </button>
+                                                <button style="right: 10%;position: absolute;" type="button"
+                                                    class="btn btn-primary">
+                                                    {{course.price}} <small *ngIf="course.price!='free'">DT</small>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <!--END card-->
+                        </div>
+                    </div>
+                </div>
+
                 <div class="table_users col-xl-12 col-lg-12">
                     <div class="card shadow mb-4 row">
                         <!-- Card Header - Dropdown -->

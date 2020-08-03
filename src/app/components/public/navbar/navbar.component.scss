@@ -62,7 +62,8 @@ nav{
     position: absolute;
     display: flex;
   width: 100%;
-  left: 300px !important;
+  margin-left: 15%;
+  
 }
 .nav-list li{
     line-height: 7rem;
@@ -198,17 +199,28 @@ border-right-color: #C19A3A;
 background-color: rgba(211, 211, 211, 0.692);
 }
 
+ @media screen and (max-width:1199px){
+     .nav-list{
+      margin-left: 0px;
+     }
+    
+ }
  @media screen and (max-width:991px){
+
      .nav-list{
          position: fixed;
-         top: 0;
-         left: 0;
+         top: 0px;
+         left: 0px !important;
          height: 100vh;
          display: none;
+         overflow-y: scroll;
          flex-direction: column;
          align-items: initial;
          background-color: #191919;
          z-index: 1000;
+     }
+     .registerbtn{
+         margin-left: 27px !important;
      }
      .nav-list >li{
          line-height: 6rem;

@@ -1,0 +1,122 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            <app-navbar></app-navbar>
+
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Profile Management</h1>
+                    <a routerLink="/profile" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">return to
+                        my
+                        profile</a>
+                </div>
+
+                <!--begin modal-->
+
+
+                <div class="table_users col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">Add Solde
+                            </h6>
+                            <div style="margin-left: auto;"> <button *ngIf="isLoggedIn"
+                                    style="width: 230px;height: 46px;" type="button" class="btn btn-info">my
+                                    solde :
+                                    <span style="font-size: 20px;" class="badge ml-2"> {{solde}} </span>
+
+
+                                </button>
+                                <button routerLink="/courses-list" *ngIf="isLogedAdmin"
+                                    style="width: 200px;height: 46px;" type="button"
+                                    class="btn btn-danger ml-5">inactive
+                                    courses :
+                                    <span style="font-size: 20px;" class="badge ml-2"> {{courses_false.length}} </span>
+                                </button></div>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+
+                            <div>
+                                <form [formGroup]="addSoldeForm" (ngSubmit)="addSoldef()" style="position: relative;"
+                                    class="registerForm">
+
+
+                                    <div class="modal-body mx-3 mt-4">
+
+                                        <div style="margin-bottom: 65px;margin-top: 50px;" class="md-form">
+
+                                            <i style="position: relative;" class="prefix"><img
+                                                    style="width: 32px;position: absolute;" src="./media/user.png"
+                                                    alt=""></i>
+                                            <input formControlName="_add_solde" required
+                                                style="margin-left: 42px;font-size: 18px;" type="text"
+                                                id="defaultForm-email" class="form-control" name="email">
+                                            <label style="font-size: 18px; position: absolute; margin-left: 42px;"
+                                                data-error="wrong" data-success="right" for="defaultForm-email">Put the
+                                                ammount wich you will add into your account</label>
+                                            <div *ngIf="ammountPuted.touched && ammountPuted.invalid">
+                                                <div *ngIf="ammountPuted.errors.required" class="text-danger ml-5">solde
+                                                    chosen
+                                                    is
+                                                    required</div>
+                                                <div *ngIf="ammountPuted.errors.pattern" class="text-danger ml-5">solde
+                                                    chosen is
+                                                    invalid</div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class=" d-flex justify-content-center mt-3">
+                                        <input [disabled]="addSoldeForm.invalid" type="submit" value="add solde"
+                                            style="width: 117px; height: 45.8px;font-size: 14px;" class="btn btn-info">
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--end modal-->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!--BEGIN FOOTER-->
+        <app-footer></app-footer>
+        <!--END FOOTER-->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

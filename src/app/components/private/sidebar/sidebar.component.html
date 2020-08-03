@@ -21,9 +21,6 @@
     </li>
 
 
-
-
-
     <!-- Nav Item - users -->
     <li *ngIf="isAdmin" class="nav-item active">
         <a routerLink="/user-list" class="nav-link">
@@ -32,13 +29,6 @@
     </li>
 
 
-
-    <li *ngIf="isAdmin || isProf" class="nav-item active">
-        <a class="nav-link" routerLink="/courses-list">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>gestion des courses</span></a>
-    </li>
-
     <li *ngIf="isAdmin" class="nav-item active">
         <a routerLink="/profs-list" class="nav-link">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -46,7 +36,11 @@
 
     </li>
 
-
+    <li *ngIf="isAdmin || isProf" class="nav-item active">
+        <a class="nav-link" routerLink="/courses-list">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>gestion des courses</span></a>
+    </li>
 
 
 
