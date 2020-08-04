@@ -22,8 +22,7 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Profile Management</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+
                 </div>
 
                 <!--begin modal-->
@@ -66,7 +65,7 @@
 
                             </div>
                             <div class="card-body">
-                                      
+
                                 <div class="mt-2 text-center small px-3" style="width: 15rem;">
                                     <button type="button" class="btn btn-sm btn-primary"
                                         style="width: 45%;margin-right:2.5% ;" (click)="file.click()"> <i
@@ -74,9 +73,8 @@
                                     <button type="button" class="btn btn-sm btn-danger"
                                         style="width: 45%;margin-left:2.5% ;" (click)="resetImg()"><i
                                             class="far fa-trash-alt"></i> Annuler</button>
-                                    <input type="file" (change)="onSelectFile($event)"
-                                        accept="image/jpeg, image/png" #file
-                                        style="visibility: hidden;width:0px;height:0px">
+                                    <input type="file" (change)="onSelectFile($event)" accept="image/jpeg, image/png"
+                                        #file style="visibility: hidden;width:0px;height:0px">
 
                                 </div>
                             </div>
@@ -137,6 +135,120 @@
                                 </form>
 
                             </div>
+
+
+                            <div *ngIf="isLogedProf" class="mt-5 table_users col-xl-12 col-lg-12">
+                                <div class="mb-4 row">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                        class="card-header col-12 py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">my inactive courses
+                                        </h6>
+                                        <button *ngIf="isLogedProf" routerLink="/add-course" class="btn btn-info">Add
+                                            Course</button>
+
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="card-body row">
+                                        <!--BEGIN card-->
+                                        <div *ngFor="let course of FProfsCourses">
+                                            <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
+                                                <div class="row no-gutters">
+                                                    <!-- Card image -->
+                                                    <div [routerLink]="['/view-course',course._id]"
+                                                        class="view overlay">
+                                                        <img class="card-img-top"
+                                                            src="./../../../../assets/imgs/defaultCoursePic.jpg"
+                                                            alt="Card image cap">
+                                                        <a>
+                                                            <div class="mask rgba-white-slight"></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"> {{course.title}} </h5>
+                                                            <p class="card-text"> {{course.description}} </p>
+                                                            <div *ngIf="!course.etat"
+                                                                style="width: 60px;height: 20px;font-size: 14px;"
+                                                                class="badge-sm badge-danger badge">inactive
+                                                            </div>
+                                                            <div *ngIf="course.etat"
+                                                                style="width: 60px;height: 20px;font-size: 14px;"
+                                                                class="badge-sm badge-success badge">active
+                                                            </div>
+                                                   
+                                                            <button style="right: 10%;position: absolute;bottom: 10px;"
+                                                                type="button" class="btn btn-primary">
+                                                                {{course.price}} <small
+                                                                    *ngIf="course.price!='free'">DT</small>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1"></div>
+                                        </div>
+                                        <!--END card-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div *ngIf="isLogedProf" class="mt-5 table_users col-xl-12 col-lg-12">
+                                <div class="mb-4 row">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                        class="card-header py-3 d-flex flex-row align-items-center col-12 justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">my active courses
+                                        </h6>
+                                 
+                                    </div>
+
+                                    <!-- Card Body -->
+                                    <div class="card-body row">
+                                        <!--BEGIN card-->
+                                        <div *ngFor="let course of TProfsCourses">
+                                            <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
+                                                <div class="row no-gutters">
+                                                    <!-- Card image -->
+                                                    <div [routerLink]="['/view-course',course._id]"
+                                                        class="view overlay">
+                                                        <img class="card-img-top"
+                                                            src="./../../../../assets/imgs/defaultCoursePic.jpg"
+                                                            alt="Card image cap">
+                                                        <a>
+                                                            <div class="mask rgba-white-slight"></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"> {{course.title}} </h5>
+                                                            <p class="card-text"> {{course.description}} </p>
+                                                            <div *ngIf="!course.etat"
+                                                                style="width: 60px;height: 20px;font-size: 14px;"
+                                                                class="badge-sm badge-danger badge">inactive
+                                                            </div>
+                                                            <div *ngIf="course.etat"
+                                                                style="width: 60px;height: 20px;font-size: 14px;"
+                                                                class="badge-sm badge-success badge">active
+                                                            </div>
+                                                 
+                                                            <button style="right: 10%;position: absolute;bottom: 10px;"
+                                                                type="button" class="btn btn-primary">
+                                                                {{course.price}} <small
+                                                                    *ngIf="course.price!='free'">DT</small>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1"></div>
+                                        </div>
+                                        <!--END card-->
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 

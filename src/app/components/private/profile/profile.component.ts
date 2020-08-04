@@ -6,6 +6,7 @@ import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/user/user.module';
+import { ProfService } from 'src/app/services/profs-services/prof.service';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +16,10 @@ import { User } from 'src/app/user/user.module';
 export class ProfileComponent implements OnInit {
   isLoggedIn: Boolean;
   isLogedAdmin: Boolean;
+  isLogedProf: Boolean;
   courses_false: String;
+  TProfsCourses = [];
+  FProfsCourses = [];
   Uid: String;
   solde: Number;
 
@@ -24,6 +28,7 @@ export class ProfileComponent implements OnInit {
 
   public updateUser: FormGroup;
   constructor(private courseService: CourseService, public fb: FormBuilder,
+    private profService: ProfService,
     private userService: UserServiceService,
     private router: Router,
     private activeroute: ActivatedRoute,
@@ -60,6 +65,12 @@ export class ProfileComponent implements OnInit {
     let token = localStorage.getItem("token");
     const help = new JwtHelperService();
     const id = help.decodeToken(token).id;
+    if (token) {
+      const solde = help.decodeToken(token).solde;
+      const id = help.decodeToken(token).id;
+      this.Uid = id;
+      this.solde = solde;
+    }
     this.userService
       .getOneUser(id)
       .subscribe(res => {
@@ -81,17 +92,11 @@ export class ProfileComponent implements OnInit {
       })
 
 
-    if (token) {
-
-      const solde = help.decodeToken(token).solde;
-      const id = help.decodeToken(token).id;
-      this.Uid = id;
-      this.solde = solde;
-    }
-
     this.isLoggedIn = this.userService.isLoggedIn();
     this.isLogedAdmin = this.userService.isLoggedAdmin()
+    this.isLogedProf = this.userService.isLoggedProf()
     this.falseCourses();
+    this.getUniqueProfsCourses();
   }
   resetImg() {
     this.url = "assets/imgs/avatar-default-profile.png"
@@ -115,7 +120,6 @@ export class ProfileComponent implements OnInit {
     formData.append("data", JSON.stringify(user));
 
     this.userService.updateFormPROFILE(userId, formData).subscribe(res => {
-      this.router.navigateByUrl('/profile');
       this.toastr.success(res.message);
 
     }, err => { console.log("user not updated"); })
@@ -131,5 +135,13 @@ export class ProfileComponent implements OnInit {
     this.uploadedFile = event.target.files[0];
     this.toastr.success('GOOD! now click the UPDATE USER button to save it in your profile');
   }
-
+  getUniqueProfsCourses() {
+    let token = localStorage.getItem("token");
+    const help = new JwtHelperService();
+    const id = help.decodeToken(token).id;
+    this.profService.getUniqueProfsCourses(id).subscribe(res => {
+      this.TProfsCourses = res.TuniqueProfCourses;
+      this.FProfsCourses = res.FuniqueProfCourses;
+    })
+  }
 }

@@ -14,12 +14,16 @@ export class ProfService {
   private _allProfUrl = this._baseLocalUrl + "/eprof/all";
   private _deleteProf = this._baseLocalUrl + "/eprof/delete";
   private _getOneProf = this._baseLocalUrl + "/eprof/one";
+  private _getProfUniqueCourses = this._baseLocalUrl + "/eprof/prof-courses-added/";
   private _updateForm = this._baseLocalUrl + "/eprof/update-form";
   constructor(private http: HttpClient) { }
 
   addProf(prof: User) {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
     return this.http.post<any>(this._addProf, prof, { headers: headers_options });
+  }
+  getUniqueProfsCourses(id) {
+    return this.http.get<any>(this._getProfUniqueCourses + id);
   }
   loginProf(prof: User) {
     return this.http.post<any>(this._loginProf, prof);

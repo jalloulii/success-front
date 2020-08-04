@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms"; // zedna hedhy
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User, Course } from 'src/app/user/user.module';
 import { UserServiceService } from 'src/app/services/users-services/user-service.service';
 import { ToastrService } from 'ngx-toastr'
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CourseService } from 'src/app/services/course-services/course.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { ProfService } from 'src/app/services/profs-services/prof.service';
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
@@ -15,17 +17,23 @@ export class AddCourseComponent implements OnInit {
 
   //zedneh ahna lel form : 
   public addUeser: FormGroup;
-
+  public idProf: String;
   constructor(public fb: FormBuilder,
     private router: Router,
     private userService: UserServiceService,
     private courseSerivce: CourseService,
     private toastr: ToastrService,
     private http: HttpClient,
+    private activeroute: ActivatedRoute,
+    private profService: ProfService
 
   ) {
     // zedneh ahna lel control
     let addUserControll = {
+      profId: new FormControl("", [
+        Validators.required,
+        // regEx , expression reguliaire
+      ]),
       title: new FormControl("", [
         Validators.required,
         Validators.minLength(2),                                                              // new FormControl()  hoaa construtor
@@ -70,10 +78,31 @@ export class AddCourseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
+    let token = localStorage.getItem("token");
+    const help = new JwtHelperService();
+    const id = help.decodeToken(token).id;
+    this.idProf = id;
+    this.profService
+      .getOneProf(id)
+      .subscribe(res => {
+        let prof = res; this.addUeser
+          .patchValue(
+            {
+              profId: id,
+
+            }
+          )
+      }, err => {
+        console.log(err);
+      })
+
   }
 
   // function errors 
 
+  get myprofId() { return this.addUeser.get('profId'); }
   get mytitle() { return this.addUeser.get('title'); }
   get myprice() { return this.addUeser.get('price'); }
   get mydescription() { return this.addUeser.get('description'); }
@@ -107,9 +136,10 @@ export class AddCourseComponent implements OnInit {
   addCourse() {
     let data = this.addUeser.value;
     let price = data.price;
- 
+
     let course = new Course(
       null,
+
       data.title,
       data.description,
       price,
@@ -119,12 +149,13 @@ export class AddCourseComponent implements OnInit {
       data.quiz_choix_2,
       data.quiz_choix_3,
       data.quiz_real_reply,
+      data.profId,
     );
     this.courseSerivce.addCourse(course).subscribe(
       res => {
         console.log(res);
         this.toastr.success("Course Added successfully");
-        this.router.navigateByUrl('/courses-list')
+        this.router.navigateByUrl('/profile/' + data.profId)
       },
       err => {
         this.toastr.error("Error Adding Course");

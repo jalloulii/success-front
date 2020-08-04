@@ -75,10 +75,13 @@ export class UserServiceService {
   registerUser(user: User) {
     return this.http.post<any>(this._registerUser, user);
   }
-  addSolde(id) {
 
+  
+  addSolde(id) {
     return this.http.patch<any>(this._addSoldeUser + id, null);
   }
+
+
   loginUser(user: User) {
     return this.http.post<any>(this._loginUser, user);
   }
