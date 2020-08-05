@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr'
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.scss', '../../dashboard/dashboard.component.scss']
+  styleUrls: ['./add-user.component.scss', '../../dashboard/dashboard.component.scss', './../../why-us/why-us.component.scss','./../user-managements.component.scss']
 })
 export class AddUserComponent implements OnInit {
 

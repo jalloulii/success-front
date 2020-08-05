@@ -11,10 +11,11 @@ export class TeachingComponent implements OnInit {
   constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
+    this.teachingCourses();
   }
   teachingCourses() {
     this.courseService.getCoursesWithCategories().subscribe(res => {
-      this.teachingT = res.courses_true_gaming;
+      this.teachingT = res.courses_true_teaching;
     })
   }
 }

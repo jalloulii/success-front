@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-update-prof',
   templateUrl: './update-prof.component.html',
-  styleUrls: ['./update-prof.component.scss', '../../dashboard/dashboard.component.scss']
+  styleUrls: ['./update-prof.component.scss', '../../dashboard/dashboard.component.scss', './../../why-us/why-us.component.scss', './../../user-managements/user-managements.component.scss']
 })
 export class UpdateProfComponent implements OnInit {
 
@@ -77,11 +77,9 @@ export class UpdateProfComponent implements OnInit {
     let data = this.updateProf.value;
     let user = new User(null, data.firstname, data.lastname, data.email, null);
     this.profservice.updateForm(userId, user).subscribe(res => {
-      console.log("user Info updated");
-      console.log(res);
       this.router.navigateByUrl('/profs-list');
-      this.toastr.success('User Updated Successfully!');
-    }, err => { console.log("user not updated"); })
+      this.toastr.success('Instructor Updated Successfully!');
+    }, err => { console.log("Instructor not updated"); })
   }
 
 }

@@ -11,7 +11,7 @@ import { ProfService } from 'src/app/services/profs-services/prof.service';
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
-  styleUrls: ['./add-course.component.scss', './../../dashboard/dashboard.component.scss']
+  styleUrls: ['./add-course.component.scss', './../../dashboard/dashboard.component.scss', './../../why-us/why-us.component.scss', './../../user-managements/user-managements.component.scss']
 })
 export class AddCourseComponent implements OnInit {
 

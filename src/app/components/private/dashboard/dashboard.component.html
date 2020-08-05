@@ -27,15 +27,28 @@
                     <h2 class="textInImg" style="text-align: center;"> {{welcomename}}</h2>
                 </div>
 
+                <div class="pageContenu">
+                    <div class="user-management">
+                        <span class="khat">
+                            <em></em>
+                        </span>
 
 
-                <div class="partieCourses row">
-                    <div class="col-12">
+                        <h1
+                            style="letter-spacing: 13px;
+                    font-size: 60px;
+                    color: #F79F17;
+                    margin: 20px 0 45px 0;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                            our courses</h1>
 
-                        <h1 class="ourCourses">our courses</h1>
+
 
                     </div>
-                    <!--khaaaaaddhrhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa      -->
+
+                </div>
+
+                <div class="partieCourses row">
 
                     <div class="col-xl-6 col-md-12 col-lg-6">
                         <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_2ZRMFN.json"
@@ -66,8 +79,8 @@
                                 <!-- Text -->
                                 <p class="card-text"> {{course.description}} </p>
                                 <!-- Button -->
-                                <button [routerLink]="['/view-course',course._id]"
-                                    type="button" class="btn btn-primary"> {{course.price}} <small
+                                <button [routerLink]="['/view-course',course._id]" type="button"
+                                    class="btn btn-primary"> {{course.price}} <small
                                         *ngIf="course.price!='free'">DT</small> </button>
 
                             </div>

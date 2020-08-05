@@ -11,7 +11,7 @@ import { ProfService } from 'src/app/services/profs-services/prof.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss', '../dashboard/dashboard.component.scss']
+  styleUrls: ['./profile.component.scss', './../user-managements/user-managements.component.scss', '../dashboard/dashboard.component.scss', './../why-us/why-us.component.scss']
 })
 export class ProfileComponent implements OnInit {
   // calculatedWidth=100;

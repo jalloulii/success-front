@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-update-user',
   templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.scss', '../../dashboard/dashboard.component.scss']
+  styleUrls: ['./update-user.component.scss', '../../dashboard/dashboard.component.scss', './../../why-us/why-us.component.scss', './../user-managements.component.scss']
 })
 export class UpdateUserComponent implements OnInit {
 

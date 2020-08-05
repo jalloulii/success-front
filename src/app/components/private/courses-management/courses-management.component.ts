@@ -5,7 +5,7 @@ import { CourseService } from 'src/app/services/course-services/course.service';
 @Component({
   selector: 'app-courses-management',
   templateUrl: './courses-management.component.html',
-  styleUrls: ['./courses-management.component.scss', './../dashboard/dashboard.component.scss']
+  styleUrls: ['./courses-management.component.scss', './../dashboard/dashboard.component.scss', './../user-managements/user-managements.component.scss', './../why-us/why-us.component.scss']
 })
 export class CoursesManagementComponent implements OnInit {
 

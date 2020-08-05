@@ -15,26 +15,37 @@
             <app-navbar></app-navbar>
 
             <!-- End of Topbar -->
+            <div class="pageContenu">
+                <div class="user-management">
+                    <span class="khat">
+                        <em></em>
+                    </span>
+
+
+                    <h5
+                        style="letter-spacing: 5px;
+                font-size: 40px;
+                color: #F79F17;
+                margin: 20px 0 45px 0;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                        Profile Management</h5>
+
+
+
+                </div>
+
+            </div>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Profile Management</h1>
-                    <a routerLink="/profile" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">return to
-                        my
-                        profile</a>
-                </div>
-
-                <!--begin modal-->
 
 
                 <div class="table_users col-xl-12 col-lg-12">
                     <div class="card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center">
-                            <h6 class="m-0 font-weight-bold text-primary">Add Solde
+                            <h6 style="color: #C19A3A;" class="m-0 font-weight-bold">Add Solde
                             </h6>
                             <div style="margin-left: auto;"> <button *ngIf="isLoggedIn"
                                     style="width: 230px;height: 46px;" type="button" class="btn btn-info">my
@@ -88,7 +99,7 @@
                                     </div>
                                     <div class=" d-flex justify-content-center mt-3">
                                         <input [disabled]="addSoldeForm.invalid" type="submit" value="add solde"
-                                            style="width: 117px; height: 45.8px;font-size: 14px;" class="btn btn-info">
+                                            style="width: 117px; height: 45.8px;font-size: 14px;" class="btn btn-warning">
                                     </div>
 
                                 </form>

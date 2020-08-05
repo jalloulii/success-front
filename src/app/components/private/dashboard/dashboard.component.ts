@@ -7,7 +7,7 @@ import { UserServiceService } from 'src/app/services/users-services/user-service
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss', '../../public/home/home.component.scss', '../../public/footer/footer.component.scss']
+  styleUrls: ['./dashboard.component.scss', '../why-us/why-us.component.scss','./../user-managements/user-managements.component.scss' ,'../../public/home/home.component.scss', '../../public/footer/footer.component.scss']
 })
 export class DashboardComponent implements OnInit {
   courses = [];

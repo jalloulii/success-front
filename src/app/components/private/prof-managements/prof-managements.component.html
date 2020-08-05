@@ -21,23 +21,37 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
+                <div class="pageContenu">
+                    <div class="user-management">
+                        <span class="khat">
+                            <em></em>
+                        </span>
 
-                <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Prof Management</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+
+                        <h5
+                            style="letter-spacing: 5px;
+                    font-size: 40px;
+                    color: #F79F17;
+                    margin: 20px 0 45px 0;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                            Instructor Management</h5>
+
+
+
+                    </div>
+
                 </div>
+
                 <div class="row">
                     <!-- Area Chart -->
                     <div class="table_users col-xl-12 col-lg-12">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Profs List</h6>
-                                <button routerLink="/add-prof" class="btn btn-info">add Prof</button>
+                                <h6 style="color: #C19A3A;" class="m-0 font-weight-bold">INSTRUCTORS LIST</h6>
+                                <button routerLink="/add-prof" class="btn btn-info">add Instructor</button>
                             </div>
-                            <div *ngIf="profs.length==0" class="alert alert-warning">profs table is empty</div>
+                            <div *ngIf="profs.length==0" class="alert alert-warning">Instructors table is empty</div>
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area row">

@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-prof-managements',
   templateUrl: './prof-managements.component.html',
-  styleUrls: ['./prof-managements.component.scss', '../dashboard/dashboard.component.scss']
+  styleUrls: ['./prof-managements.component.scss', './../user-managements/user-managements.component.scss' ,'../dashboard/dashboard.component.scss', './../why-us/why-us.component.scss']
 })
 export class ProfManagementsComponent implements OnInit {
 

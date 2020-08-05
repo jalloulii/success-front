@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-solde',
   templateUrl: './add-solde.component.html',
-  styleUrls: ['./add-solde.component.scss', '../../../dashboard/dashboard.component.scss']
+  styleUrls: ['./add-solde.component.scss', '../../../dashboard/dashboard.component.scss', './../../../user-managements/user-managements.component.scss', './../../../why-us/why-us.component.scss']
 })
 export class AddSoldeComponent implements OnInit {
   addSoldeForm: FormGroup

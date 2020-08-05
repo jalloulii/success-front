@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-add-prof',
   templateUrl: './add-prof.component.html',
-  styleUrls: ['./add-prof.component.scss', '../../dashboard/dashboard.component.scss']
+  styleUrls: ['./add-prof.component.scss', '../../dashboard/dashboard.component.scss', './../../why-us/why-us.component.scss', './../../user-managements/user-managements.component.scss']
 })
 export class AddProfComponent implements OnInit {
 

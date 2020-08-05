@@ -11,6 +11,7 @@ export class DevelomentComponent implements OnInit {
   constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
+    this.devCategories();
   }
   devCategories() {
     this.courseService.getCoursesWithCategories().subscribe(res => {

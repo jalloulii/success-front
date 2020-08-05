@@ -53,7 +53,7 @@ export class UserServiceService {
       const helper = new JwtHelperService();
       const decodedToken = helper.decodeToken(token);
 
-      if (decodedToken.role == "prof") {
+      if (decodedToken.role == "INSTRUCTOR") {
         console.log(decodedToken.etat);
         return true;
       } else {

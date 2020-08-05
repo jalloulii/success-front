@@ -11,6 +11,7 @@ export class PhotoGraphyComponent implements OnInit {
   constructor(private courseService :CourseService) { }
 
   ngOnInit(): void {
+    this.photoGraphyCourses();
   }
   photoGraphyCourses(){
     this.courseService.getCoursesWithCategories().subscribe(res=>{

@@ -6,7 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
   selector: 'app-user-managements',
   templateUrl: './user-managements.component.html',
-  styleUrls: ['./user-managements.component.scss', '../dashboard/dashboard.component.scss']
+  styleUrls: ['./user-managements.component.scss', '../dashboard/dashboard.component.scss', './../why-us/why-us.component.scss']
 })
 export class UserManagementsComponent implements OnInit {
   users = [];
