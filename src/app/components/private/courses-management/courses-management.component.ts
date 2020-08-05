@@ -16,11 +16,13 @@ export class CoursesManagementComponent implements OnInit {
   isUser: Boolean;
   isProf: Boolean;
   ngOnInit(): void {
+
     this.isAdmin = this.userService.isLoggedAdmin();
     this.isUser = this.userService.isLoggedUser();
     this.isProf = this.userService.isLoggedProf();
     this.getAllTrueCourses();
     this.getAllFalseCourses();
+
   }
 
   getAllTrueCourses() {

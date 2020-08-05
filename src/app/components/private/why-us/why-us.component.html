@@ -30,7 +30,7 @@
 
                         <h5
                             style="letter-spacing: 5px;
-                    font-size: 40px;
+                    font-size: 50px;
                     color: #F79F17;
                     margin: 20px 0 45px 0;
                     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
@@ -89,27 +89,107 @@
                         <span class="khat">
                             <em></em>
                         </span>
-                        <h1 style="  
-                    font-size: 60px;
-                    color: #F79F17;
-                    margin: 20px 0 45px 0;
-                    font-family: lato;
-                    margin: 0;">our team</h1>
-                        <div style="height: 50vh;" class="section">
+                        <h5
+                            style="letter-spacing: 5px;
+                        font-size: 50px;
+                        color: #F79F17;
+                        margin: 20px 0 45px 0;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                            our profs team
+                        </h5>
+                        <div style="height: 50vh;" class="section row">
+                            <div *ngFor="let prof of profs" class="col-3">
+                                <!-- Card -->
+                                <div class="card mb-4">
 
+                                    <!-- Card image -->
+                                    <div class="view overlay">
+                                        <img class="card-img-top" src="http://localhost:5000/{{prof.image}}"
+                                            style="height: 28vh;" alt="our teamates has not a pic">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+
+                                    </div>
+
+                                    <!-- Card content -->
+                                    <div class="">
+
+                                        <button style="top: -49.1px;width: 100%;height: 100%;" class="btn btn-warning">
+                                            <p style="font-weight: 900;font-size: 18px;margin-top: 10px;">
+                                                {{prof.firstname}} {{prof.lastname}}
+                                            <p style="font-size: 15px;">{{prof.role}}</p>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                                <!-- Card -->
+                            </div>
                         </div>
                         <!-- Swiper JS -->
+
+
+
+                    </div>
+                    <div class="team">
+                        <!-- Swiper -->
+                        <span class="khat">
+                            <em></em>
+                        </span>
+                        <h5
+                            style="letter-spacing: 5px;
+                        font-size: 50px;
+                        color: #F79F17;
+                        margin: 20px 0 45px 0;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                            the admin and the Developer of this website
+                        </h5>
+                        <div style="height: 50vh;" class="section row">
+                            <div *ngFor="let admine of admine" class="col-3">
+                                <!-- Card -->
+                                <div class="card mb-4">
+
+                                    <!-- Card image -->
+                                    <div class="view overlay">
+                                        <img class="card-img-top" src="http://localhost:5000/{{admine.image}}"
+                                            style="height: 28vh;" width="100%" alt="our teamates has not a pic">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+
+                                    </div>
+
+                                    <!-- Card content -->
+                                    <div class="">
+
+                                        <button style="top: -49.1px;width: 100%;height: 100%;" class="btn btn-warning">
+                                            <p style="font-weight: 900;font-size: 18px;margin-top: 10px;">
+                                                {{admine.firstname}} {{admine.lastname}}
+                                            <p style="font-size: 15px;">{{admine.role}}</p>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                                <!-- Card -->
+                            </div>
+                        </div>
+                        <!-- Swiper JS -->
+
 
 
                     </div>
 
 
                 </div>
-              
+
             </div>
-              <!--BEGIN FOOTER-->
-              <app-footer></app-footer>
-              <!--END FOOTER-->
+            <!--BEGIN FOOTER-->
+            <app-footer></app-footer>
+            <!--END FOOTER-->
         </div>
     </div>
 </div>

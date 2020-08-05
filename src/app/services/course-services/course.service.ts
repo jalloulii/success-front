@@ -10,6 +10,7 @@ export class CourseService {
   private _baseLocalUrl = "http://localhost:5000";
   private _allCourses = this._baseLocalUrl + "/ecourse/all";
   private _allTrueCourses = this._baseLocalUrl + "/ecourse/all-true";
+  private _allTrueCoursesCategories = this._baseLocalUrl + "/ecourse/all-true-categories";
   private _allFalseCourses = this._baseLocalUrl + "/ecourse/all-false";
   private _getOneCourse = this._baseLocalUrl + "/ecourse/one/";
   private _addOneCourse = this._baseLocalUrl + "/ecourse/add";
@@ -35,5 +36,8 @@ export class CourseService {
   updateCourseState(id) {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
     return this.http.patch<any>(this._updateState + id, null, { headers: headers_options });
+  }
+  getCoursesWithCategories() {
+    return this.http.get<any>(this._allTrueCoursesCategories);
   }
 }

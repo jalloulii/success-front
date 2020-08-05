@@ -14,12 +14,19 @@ import { ProfService } from 'src/app/services/profs-services/prof.service';
   styleUrls: ['./profile.component.scss', '../dashboard/dashboard.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  // calculatedWidth=100;
   isLoggedIn: Boolean;
   isLogedAdmin: Boolean;
   isLogedProf: Boolean;
+  isLogedUser: Boolean;
   courses_false: String;
+
   TProfsCourses = [];
   FProfsCourses = [];
+  allCoursesProf = [];
+  public name: String;
+  public role: String;
+
   Uid: String;
   solde: Number;
 
@@ -68,8 +75,12 @@ export class ProfileComponent implements OnInit {
     if (token) {
       const solde = help.decodeToken(token).solde;
       const id = help.decodeToken(token).id;
+      const name = help.decodeToken(token).welcomename;
+      const role = help.decodeToken(token).role;
       this.Uid = id;
       this.solde = solde;
+      this.role = role;
+      this.name = name;
     }
     this.userService
       .getOneUser(id)
@@ -95,6 +106,7 @@ export class ProfileComponent implements OnInit {
     this.isLoggedIn = this.userService.isLoggedIn();
     this.isLogedAdmin = this.userService.isLoggedAdmin()
     this.isLogedProf = this.userService.isLoggedProf()
+    this.isLogedUser = this.userService.isLoggedUser()
     this.falseCourses();
     this.getUniqueProfsCourses();
   }
@@ -142,6 +154,7 @@ export class ProfileComponent implements OnInit {
     this.profService.getUniqueProfsCourses(id).subscribe(res => {
       this.TProfsCourses = res.TuniqueProfCourses;
       this.FProfsCourses = res.FuniqueProfCourses;
+      this.allCoursesProf = res.AlluniqueProfCourses;
     })
   }
 }

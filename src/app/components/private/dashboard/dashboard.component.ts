@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
       console.log(res)
     })
   }
+  /*
   payment(id) {
     this.userService.getoneadmin().subscribe(res => {
       this.solde = res.solde;
@@ -63,5 +64,5 @@ export class DashboardComponent implements OnInit {
 
 
   }
-
+*/
 }

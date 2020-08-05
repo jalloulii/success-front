@@ -27,6 +27,7 @@ export class Course {
         private _quiz_choix_3?: String,
         private _quiz_real_reply?: String,
         private _profId?: String,
+        private _categorie?: String,
     ) { }
 
 }

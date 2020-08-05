@@ -1,6 +1,4 @@
-<!-- Page Wrapper -->
 <div id="wrapper">
-
     <!-- Sidebar -->
     <app-sidebar></app-sidebar>
     <!-- End of Sidebar -->
@@ -10,42 +8,40 @@
 
         <!-- Main Content -->
         <div id="content">
-
-
-
-
-
-            <!-- BEGIN navbar -->
             <app-navbar></app-navbar>
-            <!-- END navbar -->
 
-            <!--BEGIN contenu mta3 lpage-->
             <div class="container">
-                <section class="firstDivAfterNav"></section>
-                <div style="margin-left: 100px;" class="TitleOfPicture">
-                    <h2 class="textInImg" style="text-align: center;">upgrade your-self now</h2>
-                    <h2 class="textInImg" style="text-align: center;"> {{welcomename}}</h2>
+                <section class="pic-categories"></section>
+                <div class="TitleOfPicture">
                 </div>
 
+                <div class="pageContenu">
+                    <div class="stats">
+                        <span class="khat">
+                            <em></em>
+                        </span>
 
 
-                <div class="partieCourses row">
-                    <div class="col-12">
+                        <h5
+                            style="letter-spacing: 5px;
+                    font-size: 50px;
+                    color: #F79F17;
+                    margin: 20px 0 45px 0;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                            Design Categories</h5>
 
-                        <h1 class="ourCourses">our courses</h1>
+
 
                     </div>
-                    <!--khaaaaaddhrhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa      -->
 
+                </div>
+                <div class="partieCourses row">
                     <div class="col-xl-6 col-md-12 col-lg-6">
                         <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_2ZRMFN.json"
                             background="transparent" speed="1.1" loop autoplay></lottie-player>
                     </div>
 
-
-
-
-                    <div *ngFor="let course of courses" class="div-course col-xl-6  col-lg-6 col-md-12">
+                    <div *ngFor="let course of designT" class="div-course col-xl-6  col-lg-6 col-md-12">
                         <!-- Card -->
                         <div class="card mb-4">
 
@@ -66,8 +62,8 @@
                                 <!-- Text -->
                                 <p class="card-text"> {{course.description}} </p>
                                 <!-- Button -->
-                                <button [routerLink]="['/view-course',course._id]"
-                                    type="button" class="btn btn-primary"> {{course.price}} <small
+                                <button [routerLink]="['/view-course',course._id]" type="button"
+                                    class="btn btn-primary"> {{course.price}} <small
                                         *ngIf="course.price!='free'">DT</small> </button>
 
                             </div>
@@ -79,24 +75,8 @@
 
                 </div>
             </div>
-
-
-            <!--END contenu mta3 lpage-->
-
-            <br>
-
             <!--BEGIN FOOTER-->
             <app-footer></app-footer>
             <!--END FOOTER-->
-
-
-
         </div>
-        <!-- End of Main Content -->
-
-
     </div>
-    <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->

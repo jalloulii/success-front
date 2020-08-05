@@ -19,6 +19,12 @@ import { ProfileComponent } from './components/private/profile/profile.component
 import { AddCourseComponent } from './components/private/courses-management/add-course/add-course.component';
 import { CourseClickedComponent } from './components/private/course-clicked/course-clicked.component';
 import { AddSoldeComponent } from './components/private/profile/solde-management/add-solde/add-solde.component';
+import { DesignComponent } from './components/public/categories-courses/design/design.component';
+import { DevelomentComponent } from './components/public/categories-courses/develoment/develoment.component';
+import { PhotoGraphyComponent } from './components/public/categories-courses/photo-graphy/photo-graphy.component';
+import { TeachingComponent } from './components/public/categories-courses/teaching/teaching.component';
+import { GamingComponent } from './components/public/categories-courses/gaming/gaming.component';
+
 
 const routes: Routes = [
   {
@@ -78,6 +84,31 @@ const routes: Routes = [
   {
     path: "view-course/:id",
     component: CourseClickedComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "categorie-design",
+    component: DesignComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "categorie-development",
+    component: DevelomentComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "categorie-photography",
+    component: PhotoGraphyComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "categorie-teaching",
+    component: TeachingComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "categorie-gaming",
+    component: GamingComponent,
     canActivate: [AuthGuard],
   },
   {

@@ -14,6 +14,7 @@ export class UserServiceService {
   private _addSoldeUser = this._baseLocalUrl + "/euser/add-solde/";
   private _deleteUser = this._baseLocalUrl + "/euser/delete";
   private _getOneUser = this._baseLocalUrl + "/euser/one";
+  private _getMyTeam = this._baseLocalUrl + "/euser/all-profs-admins";
   private _getOneAdmin = this._baseLocalUrl + "/eadmin/one";
   private _updateForm = this._baseLocalUrl + "/euser/update-form";
   private _updateFormPROFILE = this._baseLocalUrl + "/update-formPROFILE";
@@ -76,9 +77,9 @@ export class UserServiceService {
     return this.http.post<any>(this._registerUser, user);
   }
 
-  
+
   addSolde(id) {
-    return this.http.patch<any>(this._addSoldeUser + id, null);
+    return this.http.post<any>(this._addSoldeUser + id, null);
   }
 
 
@@ -108,5 +109,8 @@ export class UserServiceService {
   updateFormPROFILE(id, formData) {
     let headers_options = new HttpHeaders().set("Authorization", localStorage.getItem("token"));
     return this.http.patch<any>(this._updateFormPROFILE + "/" + id, formData, { headers: headers_options });
+  }
+  teamSite() {
+    return this.http.get<any>(this._getMyTeam);
   }
 }

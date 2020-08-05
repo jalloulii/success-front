@@ -32,7 +32,7 @@
                     <div class="card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center">
-                            <h6 class="m-0 font-weight-bold text-primary">Your Profile
+                            <h6 style="font-size: 20px;" class="m-0 font-weight-bold colorprincipal">Your Profile
                             </h6>
                             <div style="margin-left: auto;"> <button [routerLink]="['/add-solde',Uid]"
                                     *ngIf="isLoggedIn" style="width: 230px;height: 46px;" type="button"
@@ -47,129 +47,190 @@
                                     class="btn btn-danger ml-5">inactive
                                     courses :
                                     <span style="font-size: 20px;" class="badge ml-2"> {{courses_false.length}} </span>
-                                </button></div>
+                                </button>
+
+                            </div>
 
                         </div>
 
                         <!-- Card Body -->
                         <div class="card-body">
-                            <div class="card-header py-3 d-flex flex-row align-items-center">
-                                <h6 class="m-0 font-weight-bold text-primary">Your Profile Cover Picture
-                                </h6>
+                            <div class="row">
+                                <div class="mb-4">
+                                    <div class="card-body">
+                                        <div> <img class="img-fluid px-3 px-sm-4"
+                                                style="width: 250px;height: 200px;border-radius: 100%;" [src]="url"
+                                                alt=""> </div>
+                                        <div class="mt-2 text-center small px-3" style="width: 15rem;">
+                                            <button type="button" class="btn btn-sm"
+                                                style="width: 60%;margin-right:2.5%;color: white;background-color: #C19A3A;"
+                                                (click)="file.click()"> <i class="fas fa-file-upload"></i>
+                                                choose picture</button>
 
-                            </div>
-                            <div class="container-fluid">
+                                            <input type="file" (change)="onSelectFile($event)"
+                                                accept="image/jpeg, image/png" #file
+                                                style="visibility: hidden;width:0px;height:0px">
+                                            <hr>
+                                            <div class="row">
+                                                <div style="font-size: 20px;
+                                                color:#C19A3A ;
+                                                font-family: comic sans ms;
+                                                text-transform: lowercase;" class="col-6">
+                                                    name :
+                                                </div>
+                                                <div style="font-size: 18px;
+                                                            color:#C19A3A ;
+                                                            font-family: comic sans ms;
+                                                            text-transform: lowercase;" class="col-6">
+                                                    {{name}}
+                                                </div>
+                                            </div>
+                                            <hr>
 
-                                <img class="img-fluid px-3 px-sm-4 cover-photo" [src]="url" alt="">
+                                            <div class="row">
+                                                <div style="font-size: 20px;
+                                                color:#C19A3A ;
+                                                font-family: comic sans ms;
+                                                text-transform: lowercase;" class="col-6">
+                                                    role :
+                                                </div>
+                                                <div style="font-size: 18px;
+                                                            color:#C19A3A ;
+                                                            font-family: comic sans ms;
+                                                            text-transform: lowercase;" class="col-6">
+                                                    {{role}}
+                                                </div>
+                                            </div>
+                                            <hr *ngIf="isLogedProf">
+                                            <div *ngIf="isLogedProf" class="row">
+                                                <div style="font-size: 20px;
+                                                color:#C19A3A ;
+                                                font-family: comic sans ms;
+                                                text-transform: lowercase;" class="col-6">
+                                                    courses :
+                                                </div>
+                                                <div style="font-size: 18px;
+                                                            color:#C19A3A ;
+                                                            font-family: comic sans ms;
+                                                            text-transform: lowercase;" class="col-6">
+                                                    {{allCoursesProf.length}}
+                                                </div>
+                                            </div>
 
-
-                            </div>
-                            <div class="card-body">
-
-                                <div class="mt-2 text-center small px-3" style="width: 15rem;">
-                                    <button type="button" class="btn btn-sm btn-primary"
-                                        style="width: 45%;margin-right:2.5% ;" (click)="file.click()"> <i
-                                            class="fas fa-file-upload"></i> Upload</button>
-                                    <button type="button" class="btn btn-sm btn-danger"
-                                        style="width: 45%;margin-left:2.5% ;" (click)="resetImg()"><i
-                                            class="far fa-trash-alt"></i> Annuler</button>
-                                    <input type="file" (change)="onSelectFile($event)" accept="image/jpeg, image/png"
-                                        #file style="visibility: hidden;width:0px;height:0px">
-
+                                        </div>
+                                    </div>
                                 </div>
+                                <div *ngIf="isLogedUser|| isLogedAdmin" class="col-lg-1"></div>
+
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-1 vertical-line"></div>
+                                <div class="col-lg-6 col-12">
+                                    <!-- Area Chart -->
+                                    <div class="card-header py-3 d-flex flex-row align-items-center">
+                                        <h6 style="font-size: 20px;" class="m-0 font-weight-bold text-primary">Your
+                                            Profile
+                                            Data
+                                        </h6>
+
+                                    </div>
+                                    <div class="chart-area">
+                                        <form [formGroup]="updateUser" (ngSubmit)="updateInfoUser()" class="mx-3">
+                                            <div class="md-form mb-5">
+                                                <i class="fas fa-user prefix grey-text"></i>
+                                                <input formControlName="firstname" type="text" id="orangeForm-name"
+                                                    class="form-control">
+                                                <label data-error="wrong" data-success="right"
+                                                    for="orangeForm-name">firstname</label>
+                                                <div class="text-danger"
+                                                    *ngIf="myfirstname.touched && myfirstname.invalid">
+                                                    <div *ngIf="myfirstname.errors.required">firstname is required</div>
+                                                    <div *ngIf="myfirstname.errors.pattern">firstname in invalid</div>
+                                                    <div *ngIf="myfirstname.errors.minlength">firstname must contains 2
+                                                        characteres at least</div>
+                                                </div>
+                                            </div>
+                                            <div class="md-form mb-5">
+                                                <i class="fas fa-user prefix grey-text"></i>
+                                                <input formControlName="lastname" type="text" id="orangeForm-name"
+                                                    class="form-control">
+                                                <label data-error="wrong" data-success="right"
+                                                    for="orangeForm-name">lastname</label>
+                                                <div class="text-danger"
+                                                    *ngIf="mylastname.touched && mylastname.invalid">
+                                                    <div *ngIf="mylastname.errors.required">lastname is required</div>
+                                                    <div *ngIf="mylastname.errors.pattern">lastname is invalid</div>
+                                                    <div *ngIf="mylastname.errors.minlength">last name must contains at
+                                                        least 2
+                                                        characteres</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <i class="fas fa-envelope prefix grey-text"></i>
+                                                <input formControlName="email" type="email" id="orangeForm-email"
+                                                    class="form-control">
+                                                <label data-error="wrong" data-success="right"
+                                                    for="orangeForm-email">email</label>
+                                                <div class="text-danger" *ngIf=" myemail.touched &&  myemail.invalid">
+                                                    <div *ngIf="myemail.errors.required">email is required</div>
+                                                    <div *ngIf="myemail.errors.email">email is invalid</div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="d-flex justify-content-center">
+                                                <div>
+                                                    <input type="submit" value="update user"
+                                                        [disabled]="updateUser.invalid "
+                                                        class="btn btn-primary mr-2 mb-2">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                                <lottie-player *ngIf="isLogedAdmin || isLogedUser " class="col-12"
+                                    src="https://assets6.lottiefiles.com/packages/lf20_j9e7ic.json"
+                                    background="transparent" speed="1" loop autoplay>
+                                </lottie-player>
+
                             </div>
-                            <div class="card-header py-3 d-flex flex-row align-items-center">
-                                <h6 class="m-0 font-weight-bold text-primary">Your Profile Data
-                                </h6>
-
-                            </div>
-                            <div class="chart-area">
-                                <form [formGroup]="updateUser" (ngSubmit)="updateInfoUser()" class="mx-3">
-                                    <div class="md-form mb-5">
-                                        <i class="fas fa-user prefix grey-text"></i>
-                                        <input formControlName="firstname" type="text" id="orangeForm-name"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-name">firstname</label>
-                                        <div class="text-danger" *ngIf="myfirstname.touched && myfirstname.invalid">
-                                            <div *ngIf="myfirstname.errors.required">firstname is required</div>
-                                            <div *ngIf="myfirstname.errors.pattern">firstname in invalid</div>
-                                            <div *ngIf="myfirstname.errors.minlength">firstname must contains 2
-                                                characteres at least</div>
-                                        </div>
-                                    </div>
-                                    <div class="md-form mb-5">
-                                        <i class="fas fa-user prefix grey-text"></i>
-                                        <input formControlName="lastname" type="text" id="orangeForm-name"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-name">lastname</label>
-                                        <div class="text-danger" *ngIf="mylastname.touched && mylastname.invalid">
-                                            <div *ngIf="mylastname.errors.required">lastname is required</div>
-                                            <div *ngIf="mylastname.errors.pattern">lastname is invalid</div>
-                                            <div *ngIf="mylastname.errors.minlength">last name must contains at least 2
-                                                characteres</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="md-form mb-5">
-                                        <i class="fas fa-envelope prefix grey-text"></i>
-                                        <input formControlName="email" type="email" id="orangeForm-email"
-                                            class="form-control">
-                                        <label data-error="wrong" data-success="right"
-                                            for="orangeForm-email">email</label>
-                                        <div class="text-danger" *ngIf=" myemail.touched &&  myemail.invalid">
-                                            <div *ngIf="myemail.errors.required">email is required</div>
-                                            <div *ngIf="myemail.errors.email">email is invalid</div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="d-flex justify-content-center">
-                                        <div>
-                                            <input type="submit" value="update user" [disabled]="updateUser.invalid "
-                                                class="btn btn-primary mr-2 mb-2">
-                                        </div>
-                                    </div>
-                                </form>
-
-                            </div>
-
-
-                            <div *ngIf="isLogedProf" class="mt-5 table_users col-xl-12 col-lg-12">
-                                <div class="mb-4 row">
+                            <div *ngIf="isLogedProf" class="table_users col-xl-12 col-lg-12">
+                                <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
-                                        class="card-header col-12 py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">my inactive courses
-                                        </h6>
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 style="font-size: 20px;" class="m-0 font-weight-bold colorprincipal">my
+                                            courses</h6>
                                         <button *ngIf="isLogedProf" routerLink="/add-course" class="btn btn-info">Add
                                             Course</button>
-
                                     </div>
-
+                                    <div *ngIf="allCoursesProf.length==0" class="alert alert-warning">my courses
+                                        table is
+                                        empty</div>
                                     <!-- Card Body -->
-                                    <div class="card-body row">
-                                        <!--BEGIN card-->
-                                        <div *ngFor="let course of FProfsCourses">
-                                            <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
-                                                <div class="row no-gutters">
-                                                    <!-- Card image -->
-                                                    <div [routerLink]="['/view-course',course._id]"
-                                                        class="view overlay">
-                                                        <img class="card-img-top"
-                                                            src="./../../../../assets/imgs/defaultCoursePic.jpg"
-                                                            alt="Card image cap">
-                                                        <a>
-                                                            <div class="mask rgba-white-slight"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title"> {{course.title}} </h5>
-                                                            <p class="card-text"> {{course.description}} </p>
-                                                            <div *ngIf="!course.etat"
+                                    <div class="card-body">
+                                        <div class="chart-area row">
+                                            <table *ngIf="allCoursesProf.length!=0" class="table col-xl-8 col-lg-8">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Course name</th>
+                                                        <th>Course state</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let course of allCoursesProf;let i = index">
+
+                                                        <td>{{i+1}}</td>
+                                                        <td>
+                                                            <a style="color: #C19A3A;font-size: 17px;"
+                                                                [routerLink]="['/view-course',course._id]">{{course.title}}</a>
+                                                        </td>
+                                                        <td>
+                                                            <div *ngIf=" !course.etat"
                                                                 style="width: 60px;height: 20px;font-size: 14px;"
                                                                 class="badge-sm badge-danger badge">inactive
                                                             </div>
@@ -177,77 +238,23 @@
                                                                 style="width: 60px;height: 20px;font-size: 14px;"
                                                                 class="badge-sm badge-success badge">active
                                                             </div>
-                                                   
-                                                            <button style="right: 10%;position: absolute;bottom: 10px;"
-                                                                type="button" class="btn btn-primary">
-                                                                {{course.price}} <small
-                                                                    *ngIf="course.price!='free'">DT</small>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="col-xl-4 col-lg-4">
+                                                <lottie-player
+                                                    src="https://assets6.lottiefiles.com/packages/lf20_j9e7ic.json"
+                                                    background="transparent" speed="1" loop autoplay>
+                                                </lottie-player>
                                             </div>
-                                            <div class="col-1"></div>
                                         </div>
-                                        <!--END card-->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div *ngIf="isLogedProf" class="mt-5 table_users col-xl-12 col-lg-12">
-                                <div class="mb-4 row">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center col-12 justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">my active courses
-                                        </h6>
-                                 
                                     </div>
 
-                                    <!-- Card Body -->
-                                    <div class="card-body row">
-                                        <!--BEGIN card-->
-                                        <div *ngFor="let course of TProfsCourses">
-                                            <div class="card mb-3 ml-5" style=" width: 350px;max-width: 600px;">
-                                                <div class="row no-gutters">
-                                                    <!-- Card image -->
-                                                    <div [routerLink]="['/view-course',course._id]"
-                                                        class="view overlay">
-                                                        <img class="card-img-top"
-                                                            src="./../../../../assets/imgs/defaultCoursePic.jpg"
-                                                            alt="Card image cap">
-                                                        <a>
-                                                            <div class="mask rgba-white-slight"></div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title"> {{course.title}} </h5>
-                                                            <p class="card-text"> {{course.description}} </p>
-                                                            <div *ngIf="!course.etat"
-                                                                style="width: 60px;height: 20px;font-size: 14px;"
-                                                                class="badge-sm badge-danger badge">inactive
-                                                            </div>
-                                                            <div *ngIf="course.etat"
-                                                                style="width: 60px;height: 20px;font-size: 14px;"
-                                                                class="badge-sm badge-success badge">active
-                                                            </div>
-                                                 
-                                                            <button style="right: 10%;position: absolute;bottom: 10px;"
-                                                                type="button" class="btn btn-primary">
-                                                                {{course.price}} <small
-                                                                    *ngIf="course.price!='free'">DT</small>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-1"></div>
-                                        </div>
-                                        <!--END card-->
-                                    </div>
                                 </div>
+
                             </div>
+
 
                         </div>
                     </div>

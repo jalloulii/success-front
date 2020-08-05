@@ -13,17 +13,33 @@ export class SidebarComponent implements OnInit {
   isUser: Boolean;
   isProf: Boolean;
   public welcomename: String;
+  url = "assets/imgs/avatar-default-profile.png";
   constructor(private userService: UserServiceService) { }
 
   ngOnInit(): void {
+
+    let token = localStorage.getItem("token");
+    const help = new JwtHelperService();
+    const id = help.decodeToken(token).id;
+
     this.isAdmin = this.userService.isLoggedAdmin();
     this.isUser = this.userService.isLoggedUser();
     this.isProf = this.userService.isLoggedProf();
 
-    let token = localStorage.getItem("token");
+    this.userService
+      .getOneUser(id)
+      .subscribe(res => {
+        let user = res;
+        console.log(user);
+        this.url = "http://localhost:5000/" + user.image;
+
+      }, err => {
+        console.log(err);
+      })
+
 
     if (token) {
-      const help = new JwtHelperService();
+
       const fullname = help.decodeToken(token).welcomename;
       this.welcomename = fullname;
 

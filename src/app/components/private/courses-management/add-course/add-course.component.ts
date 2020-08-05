@@ -72,6 +72,9 @@ export class AddCourseComponent implements OnInit {
       quiz_real_reply: new FormControl("", [
         Validators.required,                                                           // new FormControl()  hoaa construtor
       ]),
+      categorie: new FormControl("", [
+        Validators.required,                                                           // new FormControl()  hoaa construtor
+      ]),
     }
     // zedna edha lel liaison inputs to form
     this.addUeser = fb.group(addUserControll); // amalna liaison bin les input w lformulaire !
@@ -112,6 +115,7 @@ export class AddCourseComponent implements OnInit {
   get myquiz_choix_2() { return this.addUeser.get('quiz_choix_2'); }
   get myquiz_choix_3() { return this.addUeser.get('quiz_choix_3'); }
   get myquiz_real_reply() { return this.addUeser.get('quiz_real_reply'); }
+  get mycategorie() { return this.addUeser.get('categorie'); }
 
 
   uploadedFiles: Array<File>;
@@ -150,6 +154,7 @@ export class AddCourseComponent implements OnInit {
       data.quiz_choix_3,
       data.quiz_real_reply,
       data.profId,
+      data.categorie,
     );
     this.courseSerivce.addCourse(course).subscribe(
       res => {

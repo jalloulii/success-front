@@ -37,6 +37,12 @@ import { AddCourseComponent } from './components/private/courses-management/add-
 import { CourseClickedComponent } from './components/private/course-clicked/course-clicked.component';
 import { TestComponent } from './test/test.component';
 import { AddSoldeComponent } from './components/private/profile/solde-management/add-solde/add-solde.component';
+import { DesignComponent } from './components/public/categories-courses/design/design.component';
+import { DevelomentComponent } from './components/public/categories-courses/develoment/develoment.component';
+import { PhotoGraphyComponent } from './components/public/categories-courses/photo-graphy/photo-graphy.component';
+import { TeachingComponent } from './components/public/categories-courses/teaching/teaching.component';
+import { GamingComponent } from './components/public/categories-courses/gaming/gaming.component';
+
 
 
 
@@ -66,6 +72,12 @@ import { AddSoldeComponent } from './components/private/profile/solde-management
     CourseClickedComponent,
     TestComponent,
     AddSoldeComponent,
+    DesignComponent,
+    DevelomentComponent,
+    PhotoGraphyComponent,
+    TeachingComponent,
+    GamingComponent,
+
     
 
 

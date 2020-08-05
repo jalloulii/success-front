@@ -1,0 +1,23 @@
+.pic-categories{
+    
+    height: 630px;
+    width: 100%;
+    background-image: url(../../../../../assets/imgs/PG.jpg);
+    filter: blur(2.3px);
+    -webkit-filter: blur(2.3px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footerBottom{
+    height: 50px;
+    background-color: #C19A3A;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15.5px;
+    color: white;
+    font-family: comic sans ms;
+}
