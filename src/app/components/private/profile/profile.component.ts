@@ -87,7 +87,7 @@ export class ProfileComponent implements OnInit {
       .subscribe(res => {
         let user = res;
         console.log(user);
-        this.url = "http://localhost:5000/" + user.image;
+        this.url = "http://localhost:3000/" + user.image;
         this.updateUser
           .patchValue(
             {

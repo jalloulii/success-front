@@ -29,11 +29,10 @@ export class ProfManagementsComponent implements OnInit {
     this.profs.splice(index, 1);
     this.profService.deletProf(prof._id).subscribe(
       res => {
-        console.log('Prof deleted');
-        this.toastr.error('Prof Deleted Successfully!');
+        this.toastr.error('Instructor Deleted Successfully!');
       },
       err => {
-        console.log('Prof not deleted');
+        console.log('Instructor not deleted');
       }
     );
   }

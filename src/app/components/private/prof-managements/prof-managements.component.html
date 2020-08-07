@@ -59,6 +59,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>profile picture</th>
                                                 <th>firstname</th>
                                                 <th>lastname</th>
                                                 <th>email</th>
@@ -70,6 +71,9 @@
                                             <tr *ngFor="let prof of profs;let x = index">
 
                                                 <td> {{x+1}} </td>
+                                                <td> <img src="http://localhost:3000/{{prof.image}}"
+                                                        style="width: 50px;border-radius: 100%;"
+                                                        alt="this user has not a pic yet"> </td>
                                                 <td>{{prof.firstname}}</td>
                                                 <td>{{prof.lastname}}</td>
                                                 <td>{{prof.email}}</td>

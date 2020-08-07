@@ -72,7 +72,7 @@ export class AddProfComponent implements OnInit {
     this.profService.addProf(prof).subscribe(
       res => {
         this.router.navigateByUrl('/profs-list');
-        this.toastr.success('User Added Successfully!');
+        this.toastr.success('Instructor Added Successfully!');
       },
       err => {
         console.log(err);

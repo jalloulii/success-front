@@ -6,7 +6,8 @@ import { JwtHelperService } from "@auth0/angular-jwt";
   providedIn: 'root'
 })
 export class UserServiceService {
-  private _baseLocalUrl = "http://localhost:5000";
+  private _herokuURL = "https://success-back.herokuapp.com";
+  private _baseLocalUrl = "http://localhost:3000";
 
   private _registerUser = this._baseLocalUrl + "/euser/register";
   private _loginUser = this._baseLocalUrl + "/euser/login";

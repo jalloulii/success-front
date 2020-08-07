@@ -63,8 +63,7 @@
    -->
             <div style="margin-bottom: 65px;margin-top: 50px;" class="md-form">
 
-                <i style="position: relative;" class="prefix"><img style="width: 32px;position: absolute;"
-                        src="./media/user.png" alt=""></i>
+                <i style="top: 15px;" class="fas fa-envelope prefix grey-text"></i>
                 <input formControlName="email" required style="margin-left: 42px;font-size: 18px;" type="email"
                     id="defaultForm-email" class="form-control" name="email">
                 <label style="font-size: 18px; position: absolute; margin-left: 42px;" data-error="wrong"
@@ -77,8 +76,7 @@
             </div>
 
             <div class="md-form mb-4">
-                <i style="position: relative;" class="prefix"><img style="width: 32px;position: absolute;"
-                        src="./media/password.png" alt=""></i>
+                <i style="top: 15px;" class="fas fa-lock prefix grey-text"></i>
                 <input formControlName="password" required style="margin-left: 42px;font-size: 18px;" type="password"
                     id="defaultForm-pass" class="form-control" name="password">
                 <label style="font-size: 18px; position: absolute; margin-left: 42px;" data-error="wrong"
@@ -91,19 +89,19 @@
             </div>
         </div>
         <div class=" d-flex justify-content-center mt-3">
-            <input [disabled]="loginForm.invalid" type="submit" value="login" style="width: 117px; height: 45.8px;font-size: 14px;"
-                class="btn btn-default">
+            <input [disabled]="loginForm.invalid" type="submit" value="login"
+                style="width: 117px; height: 45.8px;font-size: 14px;" class="btn btn-default">
         </div>
         <div class="goRegister">
 
-            <p style="font-family: comic sans ms;margin-top: 20px;">new in e-coaching.tn ? <a
+            <p style="font-family: comic sans ms;margin-top: 20px;">new in success.tn ? <a
                     routerLink="/register">register</a> </p>
 
         </div>
         <div
             style="font-family: comic sans ms; color: rgb(139, 139, 139);position: absolute;bottom: 30px;left: 50%;transform: translateX(-50%);">
 
-            <p> &copy; 2020 e-coaching.tn</p>
+            <p> &copy; 2020 success.tn</p>
         </div>
     </form>
 
